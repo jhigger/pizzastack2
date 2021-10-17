@@ -14,6 +14,7 @@ export default function Section1() {
 				overflow={{base: 'hidden', md: 'visible'}}
 			>
 				<SimpleGrid
+					mr="4"
 					columns={{base: 1, md: 2}}
 					spacing="1"
 					h="110%"
@@ -21,7 +22,12 @@ export default function Section1() {
 					top={{base: '0', md: '-10vh'}}
 					zIndex="1"
 				>
-					<Text m="10" alignSelf="center" fontSize="2xl" fontWeight="thin">
+					<Text
+						m="10"
+						alignSelf="center"
+						fontSize={{base: 'xl', md: '2xl'}}
+						fontWeight="thin"
+					>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
 						blanditiis eligendi odio necessitatibus alias ipsa dicta officiis
 						cum quod eaque suscipit vel animi, tempore harum, perferendis autem
