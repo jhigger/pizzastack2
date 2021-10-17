@@ -4,11 +4,10 @@ import video from '../assets/Advertisement.webm';
 
 export default function Hero() {
 	return (
-		<Flex justify="center" align="start" minW="100vh" maxH="50vw">
+		<Flex justify="center" align="start" minW="100vw" maxH="50vw">
 			<video width="100%" height="100%" autoPlay loop muted>
 				<source src={video} type="video/webm" />
 			</video>
-
 			<Flex
 				position="absolute"
 				top="0"
