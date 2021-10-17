@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, VStack, Flex, Text, Button, Divider} from '@chakra-ui/react';
-import video from '../assets/Advertisement.webm';
+import video from '../../assets/Advertisement.webm';
 
 export default function Hero() {
 	return (
