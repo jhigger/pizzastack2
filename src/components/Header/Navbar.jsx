@@ -1,10 +1,8 @@
 import React from 'react';
-
 import {
 	chakra,
 	Box,
 	Flex,
-	useColorModeValue,
 	HStack,
 	Button,
 	useDisclosure,
@@ -14,32 +12,43 @@ import {
 	Container
 } from '@chakra-ui/react';
 import {AiOutlineMenu} from 'react-icons/ai';
+import {Link} from 'react-router-dom';
 
 const Links = ({color}) => {
 	return (
 		<>
-			<Button variant="ghost" color={color}>
-				Home
-			</Button>
-			<Button variant="ghost" color={color}>
-				Menu
-			</Button>
-			<Button variant="ghost" color={color}>
-				About
-			</Button>
-			<Button variant="ghost" color={color}>
-				Contact
-			</Button>
-			<Button variant="ghost" color={color}>
-				Franchise
-			</Button>
+			<Link to="/">
+				<Button variant="ghost" color={color}>
+					Home
+				</Button>
+			</Link>
+			<Link to="/menu">
+				<Button variant="ghost" color={color}>
+					Menu
+				</Button>
+			</Link>
+			<Link to="/about">
+				<Button variant="ghost" color={color}>
+					About
+				</Button>
+			</Link>
+			<Link to="/contact">
+				<Button variant="ghost" color={color}>
+					Contact
+				</Button>
+			</Link>
+			<Link to="/franchise">
+				<Button variant="ghost" color={color}>
+					Franchise
+				</Button>
+			</Link>
 		</>
 	);
 };
 
 export default function Navbar() {
-	const bg = useColorModeValue('blackAlpha.700', 'gray.800');
-	const color = useColorModeValue('white', 'black');
+	const bg = 'blackAlpha.700';
+	const color = 'white';
 	const mobileNav = useDisclosure();
 
 	return (
@@ -58,31 +67,29 @@ export default function Navbar() {
 						mx="auto"
 						h={{base: '2rem', md: '100%'}}
 					>
-						<Flex>
-							<chakra.a
-								fontSize={{base: 'xs', md: 'xl'}}
-								fontWeight="medium"
-								ml="2"
-								href="/"
-								title="Logo"
-								display="flex"
-								alignItems="center"
-								color={color}
-							>
-								PizzaStack
-							</chakra.a>
-						</Flex>
+						<chakra.a
+							fontSize={{base: 'xs', md: 'xl'}}
+							fontWeight="medium"
+							ml="2"
+							href="/"
+							title="Logo"
+							color={color}
+							alignSelf="center"
+							justifySelf="center"
+						>
+							PizzaStack
+						</chakra.a>
 						<HStack display="flex" alignItems="center" spacing={1}>
 							<HStack
-								spacing={1}
+								spacing={10}
 								mr={1}
-								color="brand.500"
 								display={{base: 'none', md: 'inline-flex'}}
 							>
 								<Links color={color} />
 							</HStack>
-							<Box display={{base: 'inline-flex', md: 'none'}}>
+							<Box display={{base: 'inline-flex', md: 'none'}} zIndex="100">
 								<IconButton
+									mr="1.4rem"
 									h="100%"
 									display={{base: 'flex', md: 'none'}}
 									aria-label="Open menu"
@@ -95,25 +102,26 @@ export default function Navbar() {
 
 								<VStack
 									pos="absolute"
-									top={0}
-									left={0}
-									right={0}
+									top={1}
+									right={1}
+									ml="auto"
+									mr="auto"
 									display={mobileNav.isOpen ? 'flex' : 'none'}
 									flexDirection="column"
-									p={2}
-									pb={4}
-									m={2}
-									bg={bg}
-									spacing={3}
-									rounded="sm"
+									p={1}
+									pb={5}
+									w="max"
+									bg={'whiteAlpha.900'}
+									spacing={2}
+									rounded="xl"
 									shadow="sm"
 								>
 									<CloseButton
 										aria-label="Close menu"
 										onClick={mobileNav.onClose}
-										color={color}
+										color={'black'}
 									/>
-									<Links color={color} />
+									<Links color={'black'} />
 								</VStack>
 							</Box>
 						</HStack>
