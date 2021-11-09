@@ -1,10 +1,10 @@
 import React from 'react';
 import {Icon} from '@chakra-ui/react';
 
-export default function Tilt({fill}) {
+export default function Tilt({z, fill}) {
 	return (
 		<Icon
-			zIndex="1"
+			zIndex={z}
 			position="absolute"
 			bottom="-1"
 			w="full"

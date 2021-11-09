@@ -20,7 +20,6 @@ export default function Section1() {
 					h="110%"
 					position="absolute"
 					top={{base: '0', md: '-10vh'}}
-					zIndex="1"
 				>
 					<Text
 						m="10"
