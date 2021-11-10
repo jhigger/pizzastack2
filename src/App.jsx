@@ -13,9 +13,8 @@ import {
 } from '@chakra-ui/react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navbar from './components/Header/Navbar';
-import Header from './components/Header/Header';
-import Section1 from './components/Section1';
 import Footer from './components/Footer';
+import Home from './pages/Home'
 
 function App() {
 	return (
@@ -24,8 +23,7 @@ function App() {
 				<Navbar />
 				<Switch>
 					<Route exact path="/">
-						<Header />
-						<Section1 />
+						<Home/>
 					</Route>
 					<Route path="/menu">Menu</Route>
 					<Route path="/about">About</Route>
