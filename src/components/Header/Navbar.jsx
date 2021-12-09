@@ -28,6 +28,7 @@ const NavLink = ({to, text}) => {
 					boxShadow: '0',
 					bg: '#28324B'
 				}}
+				color="white"
 			>
 				{text}
 			</Button>

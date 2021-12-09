@@ -47,6 +47,7 @@ const PizzaPrices = ({products}) => {
 							fontWeight="semibold"
 							lineHeight="tall"
 							letterSpacing="wide"
+							color="red"
 						>
 							{product.name}
 						</chakra.h3>
@@ -56,6 +57,7 @@ const PizzaPrices = ({products}) => {
 							lineHeight="taller"
 							letterSpacing="wider"
 							mb="2"
+							color="yellow"
 						>
 							{product.desc}
 						</chakra.p>
@@ -95,6 +97,7 @@ const Specialties = ({products}) => {
 							fontWeight="semibold"
 							lineHeight="tall"
 							letterSpacing="wide"
+							color="red"
 						>
 							{product.name}
 						</chakra.h3>
@@ -103,6 +106,7 @@ const Specialties = ({products}) => {
 							fontWeight="thin"
 							lineHeight="taller"
 							letterSpacing="wider"
+							color="yellow"
 						>
 							{product.desc}
 						</chakra.p>
@@ -131,6 +135,7 @@ const Others = ({products}) => {
 							fontWeight="semibold"
 							lineHeight="tall"
 							letterSpacing="wide"
+							color="red"
 						>
 							{product.name}
 						</chakra.h3>
@@ -141,6 +146,7 @@ const Others = ({products}) => {
 								lineHeight="taller"
 								letterSpacing="wider"
 								w={'xs'}
+								color="yellow"
 							>
 								{product.desc}
 							</chakra.p>
@@ -176,7 +182,8 @@ export default function Menu() {
 	return (
 		<Flex
 			bg={useColorModeValue('#F9FAFB', 'gray.600')}
-			p={20}
+			py={24}
+			px={5}
 			w="auto"
 			justifyContent="center"
 			alignItems="center"
