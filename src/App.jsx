@@ -9,7 +9,8 @@ import {
 	Text,
 	HStack,
 	SimpleGrid,
-	Image
+	Image,
+	extendTheme
 } from '@chakra-ui/react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navbar from './components/Header/Navbar';
@@ -18,9 +19,16 @@ import Home from './pages/Home';
 import Menu from './pages/Menu';
 import Franchise from './pages/Franchise/Franchise';
 
+const config = {
+	initialColorMode: 'dark',
+	useSystemColorMode: false
+};
+
+const theme = extendTheme({config});
+
 function App() {
 	return (
-		<ChakraProvider>
+		<ChakraProvider theme={theme}>
 			<Router>
 				<Navbar />
 				<Switch>
