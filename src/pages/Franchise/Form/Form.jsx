@@ -14,6 +14,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import MyTextField from './MyTextField';
+import Email from '../../../assets/email.json';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -71,7 +72,7 @@ export default function ApplicationForm() {
 					{({touched, errors, getFieldProps, handleSubmit}) => (
 						<form
 							autoComplete="off"
-							action="https://formsubmit.co/a4b713f7a49c57286bf30fff7f50de11"
+							action={`https://formsubmit.co/${Email.address}`}
 							method="POST"
 							ref={formEl}
 							onSubmit={handleSubmit}
