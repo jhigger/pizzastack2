@@ -14,34 +14,35 @@ import {
 import {AiOutlineMenu} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
 
-const Links = ({color}) => {
+const NavLink = ({to, text}) => {
+	return (
+		<Link to={to}>
+			<Button
+				variant="ghost"
+				_hover={{bg: 'yellow', textColor: 'black'}}
+				_active={{
+					bg: '#AAFFE5',
+					transform: 'scale(0.98)'
+				}}
+				_focus={{
+					boxShadow: '0',
+					bg: '#28324B'
+				}}
+			>
+				{text}
+			</Button>
+		</Link>
+	);
+};
+
+const Links = () => {
 	return (
 		<>
-			<Link to="/">
-				<Button variant="ghost" color={color}>
-					Home
-				</Button>
-			</Link>
-			<Link to="/menu">
-				<Button variant="ghost" color={color}>
-					Menu
-				</Button>
-			</Link>
-			<Link to="/about">
-				<Button variant="ghost" color={color}>
-					About
-				</Button>
-			</Link>
-			<Link to="/contact">
-				<Button variant="ghost" color={color}>
-					Contact
-				</Button>
-			</Link>
-			<Link to="/franchise">
-				<Button variant="ghost" color={color}>
-					Franchise
-				</Button>
-			</Link>
+			<NavLink to="/" text="Home" />
+			<NavLink to="/menu" text="Menu" />
+			<NavLink to="/about" text="About" />
+			<NavLink to="/contact" text="Contact" />
+			<NavLink to="/franchise" text="Franchise" />
 		</>
 	);
 };
@@ -111,7 +112,7 @@ export default function Navbar() {
 									p={1}
 									pb={5}
 									w="max"
-									bg={'whiteAlpha.900'}
+									bg={'blackAlpha.900'}
 									spacing={2}
 									rounded="xl"
 									shadow="sm"
@@ -119,9 +120,10 @@ export default function Navbar() {
 									<CloseButton
 										aria-label="Close menu"
 										onClick={mobileNav.onClose}
-										color={'black'}
+										color={'white'}
+										mt={2}
 									/>
-									<Links color={'black'} />
+									<Links />
 								</VStack>
 							</Box>
 						</HStack>
