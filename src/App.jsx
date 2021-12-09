@@ -14,7 +14,8 @@ import {
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home'
+import Home from './pages/Home';
+import Menu from './pages/Menu';
 
 function App() {
 	return (
@@ -22,10 +23,8 @@ function App() {
 			<Router>
 				<Navbar />
 				<Switch>
-					<Route exact path="/">
-						<Home/>
-					</Route>
-					<Route path="/menu">Menu</Route>
+					<Route exact path="/" component={Home} />
+					<Route path="/menu" component={Menu} />
 					<Route path="/about">About</Route>
 					<Route path="/contact">Contact</Route>
 					<Route path="/franchise">Franchise</Route>

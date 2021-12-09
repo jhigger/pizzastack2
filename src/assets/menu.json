@@ -1,0 +1,219 @@
+{
+  "menu": [
+    {
+      "title": "Boxes of Pizza",
+      "products": [
+        {
+          "name": "Box of 9",
+          "desc": "9 pcs 4 inch sized pizza",
+          "size": {
+            "classic": "P240.00",
+            "premium": "P260.00"
+          }
+        },
+        {
+          "name": "Box of 12",
+          "desc": "12 pcs 4 inch sized pizza",
+          "size": {
+            "classic": "P320.00",
+            "premium": "P360.00"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Pizza Stacks",
+      "products": [
+        {
+          "name": "Pizza Stack",
+          "desc": "3 pcs of 4 inches pizza on a cup of 12 oz",
+          "size": {
+            "classic": "P119.00",
+            "premium": "P139.00"
+          }
+        },
+        {
+          "name": "Super Stack",
+          "desc": "4 pcs of 4 inches pizza on a cup of 12 oz",
+          "size": {
+            "classic": "P129.00",
+            "premium": "P149.00"
+          }
+        },
+        {
+          "name": "Mega Stack",
+          "desc": "5 pcs of 4 inches pizza on a cup of 12 oz",
+          "size": {
+            "classic": "P139.00",
+            "premium": "P159.00"
+          }
+        }
+      ]
+    },
+    {
+      "specialties": [
+        {
+          "title": "Classic Pizza",
+          "products": [
+            {
+              "name": "Margherita",
+              "desc": "Tomato sauce, Cheese, Basil leaves"
+            },
+            {
+              "name": "Pepperoni",
+              "desc": "Pepperoni & Green peppers"
+            },
+            {
+              "name": "Tropicana",
+              "desc": "Ham & Pineapple"
+            }
+          ]
+        },
+        {
+          "title": "Premium Pizza",
+          "products": [
+            {
+              "name": "Americana",
+              "desc": "Ground beef, Mushroom, Onion"
+            },
+            {
+              "name": "Bratwurst Pizza",
+              "desc": "Sausage & Caramelized onion"
+            },
+            {
+              "name": "Caribbeana",
+              "desc": "Chicken, Mango & Caramelized onion"
+            },
+            {
+              "name": "Mediteranea[V]",
+              "desc": "Spinach, Olives & Bell peppers"
+            },
+            {
+              "name": "Nautica",
+              "desc": "Tuna & Sweet corn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "products": [
+        {
+          "name": "PizzSarap",
+          "desc": "Slices of ham & cheese wrapped in loaf bread, rolled in bread crumbs and deep fried.",
+          "size": {
+            "regular": "P50.00"
+          }
+        },
+        {
+          "name": "Cajun Fries",
+          "desc": "Deep fried string potatoes seasoned with cajun powder.(slightly spicy)",
+          "size": {
+            "regular": "P40.00",
+            "large": "P60.00"
+          }
+        },
+        {
+          "name": "Panini Style Sandwich",
+          "desc": "Three layered loaf bread filled with your choice of tuna & cheese or ham & cheese.",
+          "size": {
+            "regular": "P69.00"
+          }
+        },
+        {
+          "name": "Burger Beed Slaw",
+          "desc": "Pan-grilled premium ground beef with special sauce, cheese and coleslaw in a sesame bun.",
+          "size": {
+            "regular": "P109.00"
+          }
+        },
+        {
+          "name": "Mozz'ube'lla",
+          "desc": "Our very own 3 in 1 pizza loaded with ube jam and mozzarella cheese.",
+          "size": {
+            "regular": "P110.00"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Budget Meal",
+      "products": [
+        {
+          "name": "BM1",
+          "desc": "1 pc Margherita Pizza w/ Cajun Fries.",
+          "size": {
+            "regular": "P89.00"
+          }
+        },
+        {
+          "name": "BM2",
+          "desc": "2 pcs Margheritta Pizza w/ Drinks.",
+          "size": {
+            "regular": "P89.00"
+          }
+        },
+        {
+          "name": "BM3",
+          "desc": "3 pcs Margerita Pizza.",
+          "size": {
+            "regular": "P89.00"
+          }
+        }
+      ]
+    },
+    {
+      "products": [
+        {
+          "name": "Chicken Burger Slaw",
+          "desc": "Gourmet chicken burger with cheese, coleslaw & pizza stack's special sauce.",
+          "size": {
+            "regular": "P90.00"
+          }
+        },
+        {
+          "name": "CB1",
+          "desc": "Chicken burger slaw with drinks.",
+          "size": {
+            "regular": "P129.00"
+          }
+        },
+        {
+          "name": "CB2",
+          "desc": "Chicken burger slaw with fries.",
+          "size": {
+            "regular": "P129.00"
+          }
+        },
+        {
+          "name": "CB3",
+          "desc": "Chicken burger slaw with drinks & fries.",
+          "size": {
+            "regular": "P159.00"
+          }
+        },
+        {
+          "name": "Nuggets",
+          "desc": "6 pcs nuggets.",
+          "size": {
+            "regular": "P109.00"
+          }
+        },
+        {
+          "name": "N1",
+          "desc": "3 pcs nuggets with fries.",
+          "size": {
+            "regular": "P99.00"
+          }
+        },
+        {
+          "name": "N2",
+          "desc": "6 pcs nuggets with fries.",
+          "size": {
+            "regular": "P139.00"
+          }
+        }
+      ]
+    }
+  ]
+}
