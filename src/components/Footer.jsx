@@ -1,4 +1,5 @@
-import {Box, Text, Flex, useColorModeValue} from '@chakra-ui/react';
+import {Box, Text, Flex, Image} from '@chakra-ui/react';
+import Logo from '../assets/logo.png';
 
 export default function LargeWithLogoCentered() {
 	return (
@@ -21,7 +22,7 @@ export default function LargeWithLogoCentered() {
 						ml: 8
 					}}
 				>
-					LOGO
+					<Image src={Logo} alt="Logo" boxSize="10rem" objectFit="contain" />
 				</Flex>
 				<Text pt={6} fontSize={'sm'} textAlign={'center'}>
 					© 2021 PizzaStack&trade;. All rights reserved
