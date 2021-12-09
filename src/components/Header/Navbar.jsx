@@ -77,7 +77,7 @@ export default function Navbar() {
 							alignSelf="center"
 							justifySelf="center"
 						>
-							PizzaStack
+							PizzaStack™
 						</chakra.a>
 						<HStack display="flex" alignItems="center" spacing={1}>
 							<HStack
