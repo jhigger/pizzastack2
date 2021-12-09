@@ -52,14 +52,27 @@ const ProductDesc = ({desc, ...props}) => {
 	);
 };
 
-const PizzaPrices = ({products}) => {
-	const classicDots = (times) => {
-		return '.'.repeat(40 - times);
-	};
-	const premiumDots = (times) => {
-		return '.'.repeat(37 - times);
+const ProductPrice = ({text, dots, price}) => {
+	const printDots = () => {
+		return '.'.repeat(dots - price.length);
 	};
 
+	return (
+		<chakra.p
+			fontSize="md"
+			fontWeight="light"
+			lineHeight="taller"
+			letterSpacing="widest"
+			color="white"
+		>
+			{text}
+			{printDots()}
+			{price}
+		</chakra.p>
+	);
+};
+
+const PizzaPrices = ({products}) => {
 	return (
 		<>
 			{products.map((product) => {
@@ -67,24 +80,16 @@ const PizzaPrices = ({products}) => {
 					<Box textAlign="center" key={product.name}>
 						<ProductName name={product.name} />
 						<ProductDesc desc={product.desc} />
-						<chakra.p
-							fontSize="md"
-							fontWeight="light"
-							lineHeight="taller"
-							letterSpacing="widest"
-						>
-							Classic{classicDots(product.size.classic.length)}
-							{product.size.classic}
-						</chakra.p>
-						<chakra.p
-							fontSize="md"
-							fontWeight="light"
-							lineHeight="taller"
-							letterSpacing="widest"
-						>
-							Premium{premiumDots(product.size.premium.length)}
-							{product.size.premium}
-						</chakra.p>
+						<ProductPrice
+							text={'Classic'}
+							dots={40}
+							price={product.size.classic}
+						/>
+						<ProductPrice
+							text="Premium"
+							dots={37}
+							price={product.size.premium}
+						/>
 					</Box>
 				);
 			})}
@@ -108,13 +113,6 @@ const Specialties = ({products}) => {
 };
 
 const Others = ({products}) => {
-	const regularDots = (times) => {
-		return '.'.repeat(40 - times);
-	};
-	const largeDots = (times) => {
-		return '.'.repeat(43 - times);
-	};
-
 	return (
 		<>
 			{products.map((product) => {
@@ -124,25 +122,13 @@ const Others = ({products}) => {
 						<Flex align="center" justify="center">
 							<ProductDesc desc={product.desc} w={'xs'} />
 						</Flex>
-						<chakra.p
-							fontSize="md"
-							fontWeight="light"
-							lineHeight="taller"
-							letterSpacing="widest"
-						>
-							Regular{regularDots(product.size.regular.length)}
-							{product.size.regular}
-						</chakra.p>
+						<ProductPrice
+							text={'Regular'}
+							dots={40}
+							price={product.size.regular}
+						/>
 						{product.size.large && (
-							<chakra.p
-								fontSize="md"
-								fontWeight="light"
-								lineHeight="taller"
-								letterSpacing="widest"
-							>
-								Large{largeDots(product.size.large.length)}
-								{product.size.large}
-							</chakra.p>
+							<ProductPrice text="Large" dots={43} price={product.size.large} />
 						)}
 					</Box>
 				);
