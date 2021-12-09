@@ -22,6 +22,36 @@ const MenuItem = ({title, children}) => {
 	);
 };
 
+const ProductName = ({name}) => {
+	return (
+		<chakra.h3
+			fontSize="lg"
+			fontWeight="semibold"
+			lineHeight="tall"
+			letterSpacing="wide"
+			color="red"
+		>
+			{name}
+		</chakra.h3>
+	);
+};
+
+const ProductDesc = ({desc, ...props}) => {
+	return (
+		<chakra.p
+			fontSize="sm"
+			fontWeight="thin"
+			lineHeight="taller"
+			letterSpacing="wider"
+			color="yellow"
+			mb="2"
+			{...props}
+		>
+			{desc}
+		</chakra.p>
+	);
+};
+
 const PizzaPrices = ({products}) => {
 	const classicDots = (times) => {
 		return '.'.repeat(40 - times);
@@ -35,25 +65,8 @@ const PizzaPrices = ({products}) => {
 			{products.map((product) => {
 				return (
 					<Box textAlign="center" key={product.name}>
-						<chakra.h3
-							fontSize="lg"
-							fontWeight="semibold"
-							lineHeight="tall"
-							letterSpacing="wide"
-							color="red"
-						>
-							{product.name}
-						</chakra.h3>
-						<chakra.p
-							fontSize="sm"
-							fontWeight="thin"
-							lineHeight="taller"
-							letterSpacing="wider"
-							mb="2"
-							color="yellow"
-						>
-							{product.desc}
-						</chakra.p>
+						<ProductName name={product.name} />
+						<ProductDesc desc={product.desc} />
 						<chakra.p
 							fontSize="md"
 							fontWeight="light"
@@ -85,24 +98,8 @@ const Specialties = ({products}) => {
 			{products.map((product) => {
 				return (
 					<Box textAlign="center" key={product.name}>
-						<chakra.h3
-							fontSize="lg"
-							fontWeight="semibold"
-							lineHeight="tall"
-							letterSpacing="wide"
-							color="red"
-						>
-							{product.name}
-						</chakra.h3>
-						<chakra.p
-							fontSize="sm"
-							fontWeight="thin"
-							lineHeight="taller"
-							letterSpacing="wider"
-							color="yellow"
-						>
-							{product.desc}
-						</chakra.p>
+						<ProductName name={product.name} />
+						<ProductDesc desc={product.desc} />
 					</Box>
 				);
 			})}
@@ -123,26 +120,9 @@ const Others = ({products}) => {
 			{products.map((product) => {
 				return (
 					<Box textAlign="center" key={product.name}>
-						<chakra.h3
-							fontSize="lg"
-							fontWeight="semibold"
-							lineHeight="tall"
-							letterSpacing="wide"
-							color="red"
-						>
-							{product.name}
-						</chakra.h3>
+						<ProductName name={product.name} />
 						<Flex align="center" justify="center">
-							<chakra.p
-								fontSize="sm"
-								fontWeight="thin"
-								lineHeight="taller"
-								letterSpacing="wider"
-								w={'xs'}
-								color="yellow"
-							>
-								{product.desc}
-							</chakra.p>
+							<ProductDesc desc={product.desc} w={'xs'} />
 						</Flex>
 						<chakra.p
 							fontSize="md"
