@@ -16,6 +16,7 @@ import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
+import Franchise from './pages/Franchise/Franchise';
 
 function App() {
 	return (
@@ -27,7 +28,7 @@ function App() {
 					<Route path="/menu" component={Menu} />
 					<Route path="/about">About</Route>
 					<Route path="/contact">Contact</Route>
-					<Route path="/franchise">Franchise</Route>
+					<Route path="/franchise" component={Franchise} />
 				</Switch>
 				<Footer />
 			</Router>
