@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-	chakra,
-	Box,
-	SimpleGrid,
-	Flex,
-	useColorModeValue,
-	Container
-} from '@chakra-ui/react';
+import {chakra, Box, SimpleGrid, Flex, Container} from '@chakra-ui/react';
 import data from '../assets/menu.json';
 
 const MenuItem = ({title, children}) => {
@@ -181,7 +174,7 @@ const Others = ({products}) => {
 export default function Menu() {
 	return (
 		<Flex
-			bg={useColorModeValue('#F9FAFB', 'gray.600')}
+			bg={'gray.600'}
 			py={24}
 			px={5}
 			w="auto"
@@ -192,7 +185,7 @@ export default function Menu() {
 				px={8}
 				py={4}
 				mx="auto"
-				bg={useColorModeValue('white', 'gray.800')}
+				bg={'gray.800'}
 				shadow="xl"
 				maxW="container.xl"
 			>
