@@ -52,6 +52,7 @@ export default function Hero() {
 						borderColor="white"
 						borderWidth={{base: 'thin', md: 'medium'}}
 						py="1.5"
+						_hover={{bg: 'black', textColor: 'red'}}
 					>
 						<Text as="h3" fontSize={{base: 'sm', md: '3xl'}} casing="uppercase">
 							Franchise Now!
