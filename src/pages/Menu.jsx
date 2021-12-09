@@ -2,7 +2,8 @@ import React from 'react';
 import {chakra, Box, SimpleGrid, Flex, Container} from '@chakra-ui/react';
 import data from '../assets/menu.json';
 
-const MenuItem = ({title, children}) => {
+const MenuItem = ({title, children, length}) => {
+	const cols = length % 2 == 0 ? 2 : 3;
 	return (
 		<Box align="center" mb={12}>
 			<chakra.p
@@ -15,7 +16,7 @@ const MenuItem = ({title, children}) => {
 			>
 				{title}
 			</chakra.p>
-			<SimpleGrid columns={{base: 1, lg: 2}} spacingY={16} mt={6}>
+			<SimpleGrid columns={{base: 1, md: 2, lg: cols}} spacingY={16} mt={6}>
 				{children}
 			</SimpleGrid>
 		</Box>
@@ -158,7 +159,11 @@ export default function Menu() {
 				{data.menu.map((item, i) => {
 					if (i == 0)
 						return (
-							<MenuItem title={item.title} key={i}>
+							<MenuItem
+								title={item.title}
+								key={i}
+								length={item.products.length}
+							>
 								<PizzaPrices products={item.products} />
 							</MenuItem>
 						);
