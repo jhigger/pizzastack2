@@ -25,7 +25,7 @@ export default function LargeWithLogoCentered() {
 					<Image src={Logo} alt="Logo" boxSize="10rem" objectFit="contain" />
 				</Flex>
 				<Text pt={6} fontSize={'sm'} textAlign={'center'}>
-					Cooyeesan Hotel Plaza, Naguilian Road, Baguio City, Benguet
+					363 Legarda Rd, Baguio City, Benguet
 				</Text>
 				<Text pt={6} fontSize={'sm'} textAlign={'center'}>
 					© 2021 PizzaStack&trade;. All rights reserved
