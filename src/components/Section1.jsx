@@ -1,10 +1,9 @@
 import React from 'react';
 import {Box, Container, Text, SimpleGrid, Image} from '@chakra-ui/react';
-import Tilt from './Tilt';
 
 export default function Section1() {
 	return (
-		<Box bg="black" color="white" w="full" h="2xl" position="relative">
+		<Box bg="black" color="white" w="full" h="2xl" position="relative" pt={24}>
 			<Container
 				maxW="container.xl"
 				h="full"
@@ -41,7 +40,6 @@ export default function Section1() {
 					/>
 				</SimpleGrid>
 			</Container>
-			<Tilt fill="white" />
 		</Box>
 	);
 }

@@ -9,10 +9,12 @@ import {
 	VStack,
 	IconButton,
 	CloseButton,
-	Container
+	Container,
+	Image
 } from '@chakra-ui/react';
 import {AiOutlineMenu} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
+import Logo from '../../assets/logo.png';
 
 const NavLink = ({to, text}) => {
 	return (
@@ -69,21 +71,29 @@ export default function Navbar() {
 						mx="auto"
 						h={{base: '2rem', md: '100%'}}
 					>
-						<chakra.a
-							fontSize={{base: 'xs', md: 'xl'}}
-							fontWeight="medium"
-							ml="2"
-							href="/"
-							title="Logo"
-							color={color}
-							alignSelf="center"
-							justifySelf="center"
-						>
-							PizzaStack™
-						</chakra.a>
+						<Flex direction="row">
+							<Image
+								src={Logo}
+								alt="Logo"
+								boxSize={{base: '2rem', md: '4rem'}}
+								objectFit="contain"
+							/>
+							<chakra.a
+								fontSize={{base: 'xs', md: 'xl'}}
+								fontWeight="medium"
+								ml="2"
+								href="/"
+								title="Logo"
+								color={color}
+								alignSelf="center"
+								justifySelf="center"
+							>
+								PizzaStack™
+							</chakra.a>
+						</Flex>
 						<HStack display="flex" alignItems="center" spacing={1}>
 							<HStack
-								spacing={10}
+								spacing={5}
 								mr={1}
 								display={{base: 'none', md: 'inline-flex'}}
 							>
