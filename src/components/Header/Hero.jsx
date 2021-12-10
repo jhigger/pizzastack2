@@ -11,10 +11,9 @@ export default function Hero() {
 			<Flex
 				position="absolute"
 				top="0"
-				// left="0"
 				w="full"
 				h="full"
-				bg="blackAlpha.300"
+				bg="blackAlpha.400"
 				color="white"
 				justify="center"
 				align="start"
