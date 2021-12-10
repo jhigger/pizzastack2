@@ -71,26 +71,24 @@ export default function Navbar() {
 						mx="auto"
 						h={{base: '2rem', md: '100%'}}
 					>
-						<Flex direction="row">
-							<Image
-								src={Logo}
-								alt="Logo"
-								boxSize={{base: '2rem', md: '4rem'}}
-								objectFit="contain"
-							/>
-							<chakra.a
-								fontSize={{base: 'xs', md: 'xl'}}
-								fontWeight="medium"
-								ml="2"
-								href="/"
-								title="Logo"
-								color={color}
-								alignSelf="center"
-								justifySelf="center"
-							>
+						<chakra.a
+							fontSize={{base: 'xs', md: 'xl'}}
+							fontWeight="medium"
+							ml="2"
+							href="/"
+							title="PizzaStack"
+							color={color}
+						>
+							<Flex direction="row" align="center" justify="center">
+								<Image
+									src={Logo}
+									alt="Logo"
+									boxSize={{base: '2rem', md: '4rem'}}
+									objectFit="contain"
+								/>
 								PizzaStack™
-							</chakra.a>
-						</Flex>
+							</Flex>
+						</chakra.a>
 						<HStack display="flex" alignItems="center" spacing={1}>
 							<HStack
 								spacing={5}
