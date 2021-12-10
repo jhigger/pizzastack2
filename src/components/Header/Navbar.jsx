@@ -57,18 +57,13 @@ export default function Navbar() {
 
 	return (
 		<Box position="absolute" top="0" w="full" zIndex="1">
-			<chakra.header
-				bg={bg}
-				w="full"
-				px={{base: 0, md: 4}}
-				py={{base: 0, md: 4}}
-				shadow="xl"
-			>
+			<chakra.header bg={bg} w="full" shadow="xl">
 				<Container maxW="container.xl">
 					<Flex
 						alignItems="center"
 						justifyContent="space-between"
 						mx="auto"
+						px={5}
 						h={{base: '2rem', md: '100%'}}
 					>
 						<chakra.a
@@ -83,7 +78,7 @@ export default function Navbar() {
 								<Image
 									src={Logo}
 									alt="Logo"
-									boxSize={{base: '2rem', md: '4rem'}}
+									boxSize={{base: '2rem', md: '6rem'}}
 									objectFit="contain"
 								/>
 								PizzaStack™
