@@ -9,21 +9,23 @@ import {
 	Stack,
 	VStack
 } from '@chakra-ui/react';
-import {Fa} from 'react-icons';
+import {FaYoutube} from '@react-icons/all-files/fa/FaYoutube';
+import {FaFacebookSquare} from '@react-icons/all-files/fa/FaFacebookSquare';
+import {FaInstagram} from '@react-icons/all-files/fa/FaInstagram';
 
 const socials = [
 	{
-		icon: Fa.FaYoutube,
+		icon: FaYoutube,
 		title: 'Youtube',
 		link: 'https://www.youtube.com/channel/UCSrtB2LcCGJXaK4XPY8nrJw'
 	},
 	{
-		icon: Fa.FaFacebookSquare,
+		icon: FaFacebookSquare,
 		title: 'Facebook',
 		link: 'https://www.facebook.com/PizzaStackTM'
 	},
 	{
-		icon: Fa.FaInstagram,
+		icon: FaInstagram,
 		title: 'Instagram',
 		link: 'https://www.instagram.com/pizza_stack_ph/'
 	}
@@ -57,7 +59,7 @@ export default function Contact() {
 				</Stack>
 
 				<Container maxW={'xl'} mt={12}>
-					<SimpleGrid columns={{base: 1, md: 3}} spacing={1}>
+					<SimpleGrid columns={{base: 1, md: 3}} spacing={12}>
 						{socials.map((social) => (
 							<chakra.a
 								fontSize={{base: 'xs', md: 'xl'}}
