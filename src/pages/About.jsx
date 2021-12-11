@@ -10,10 +10,12 @@ import {
 import italy from '../assets/italy.webp';
 import pizza_drink from '../assets/pizza_drink.webp';
 import uk from '../assets/uk.webp';
+import nectar from '../assets/nectar.webp';
+import ged from '../assets/ged.webp';
 
 const images = {
-	avatar1: 'https://via.placeholder.com/600x400?text=Avatar',
-	avatar2: 'https://via.placeholder.com/600x400?text=Avatar',
+	avatar1: nectar,
+	avatar2: ged,
 
 	card1: italy,
 	card2: pizza_drink,
@@ -41,7 +43,7 @@ export default function About() {
 					<AboutAvatar
 						image={images.avatar1}
 						name="Nectar Scott"
-						title="Founder"
+						title="Founder & CEO"
 					/>
 					<AboutAvatar
 						image={images.avatar2}
