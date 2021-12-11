@@ -39,18 +39,6 @@ export default function About() {
 				align="center"
 				justify="center"
 			>
-				<SimpleGrid columns={{base: 1, md: 2}} spacing={8} mt={6} maxW="max">
-					<AboutAvatar
-						image={images.avatar1}
-						name="Nectar Scott"
-						title="Founder & CEO"
-					/>
-					<AboutAvatar
-						image={images.avatar2}
-						name="Ged Scott"
-						title="Co-Founder"
-					/>
-				</SimpleGrid>
 				<AboutCard
 					mt={8}
 					image={images.card1}
@@ -77,6 +65,18 @@ export default function About() {
 					title="INTERNATIONALIZED IN THE UK"
 					text="The Scotts proudly opened their first British store in Bromborough, United Kingdom. “Pizza snack with a twist” – perfect for the fast-paced lifestyle in UK, tailor fit to the modern market."
 				/>
+				<SimpleGrid columns={{base: 1, md: 2}} spacing={8} mt={6} maxW="max">
+					<AboutAvatar
+						image={images.avatar1}
+						name="Nectar Scott"
+						title="Founder & CEO"
+					/>
+					<AboutAvatar
+						image={images.avatar2}
+						name="Ged Scott"
+						title="Co-Founder"
+					/>
+				</SimpleGrid>
 			</Container>
 		</Flex>
 	);
