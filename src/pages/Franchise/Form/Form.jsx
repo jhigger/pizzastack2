@@ -15,6 +15,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import MyTextField from './MyTextField';
 import Email from '../../../assets/email.json';
+import DateTimePicker from './DateTimePicker';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -37,13 +38,24 @@ export default function ApplicationForm() {
 						name: '',
 						address: '',
 						email: '',
-						contact: '',
+						telephone: '',
+						mobile: '',
 						company: '',
-						purpose: '',
-						location: '',
+						position: '',
+						company_address: '',
+						company_tel: '',
+						company_email: '',
+						area: '',
+						consider_other: 'No',
+						consider_specify: '',
+						investment: '',
 						active_passive: '',
 						individual_partners: '',
-						investment: ''
+						other_businesses: '',
+						lead_source: '',
+						other_source: '',
+						request: '',
+						date_time: ''
 					}}
 					validationSchema={Yup.object({
 						name: Yup.string()
@@ -52,155 +64,334 @@ export default function ApplicationForm() {
 							.max(50, 'Full name too long'),
 						address: Yup.string().required('Required'),
 						email: Yup.string().email('Invalid email').required('Required'),
-						contact: Yup.number()
+						telephone: Yup.number()
 							.integer()
-							.typeError('Please enter a valid contact number')
+							.typeError('Please enter a valid telephone number')
 							.required('Required'),
-						company: Yup.string(),
-						purpose: Yup.string().required('Required'),
-						location: Yup.string().required('Required'),
-						active_passive: Yup.string().required('Required'),
-						individual_partners: Yup.string().required('Required'),
+						mobile: Yup.number()
+							.integer()
+							.typeError('Please enter a valid mobile number')
+							.required('Required'),
+						company: Yup.string().required('Required'),
+						position: Yup.string().required('Required'),
+						company_address: Yup.string().required('Required'),
+						company_tel: Yup.number()
+							.integer()
+							.typeError('Please enter a valid telephone number')
+							.required('Required'),
+						company_email: Yup.string()
+							.email('Invalid email')
+							.required('Required'),
+						area: Yup.string().required('Required'),
+						consider_other: Yup.string().required('Required'),
+						consider_specify: Yup.string(),
 						investment: Yup.number()
 							.typeError('Please enter a valid currency number')
-							.required('Required')
+							.required('Required'),
+						active_passive: Yup.string().required('Required'),
+						individual_partners: Yup.string().required('Required'),
+						other_businesses: Yup.string(),
+						lead_source: Yup.string().required('Required'),
+						other_source: Yup.string(),
+						request: Yup.string().required('Required'),
+						available: Yup.string().required('Required'),
+						date_time: Yup.string().required('Required')
 					})}
 					onSubmit={() => {
 						formEl.current.submit();
 					}}
 				>
-					{({touched, errors, getFieldProps, handleSubmit}) => (
-						<form
-							autoComplete="off"
-							action={`https://formsubmit.co/${Email.address}`}
-							method="POST"
-							ref={formEl}
-							onSubmit={handleSubmit}
-						>
-							<input type="hidden" name="_template" value="table" />
-							<input
-								type="hidden"
-								name="_subject"
-								value="Franchise Application"
-							/>
-							<Grid container spacing={2}>
-								<Grid item xs={12}>
-									<Typography variant="h5" align="center">
-										APPLICATION FORM
-									</Typography>
-								</Grid>
-								<Grid item xs={12}>
-									<MyTextField label="Complete Name" name="name" />
-								</Grid>
-								<Grid item xs={12}>
-									<MyTextField label="Home Address" name="address" />
-								</Grid>
-								<Grid item xs={12} sm={6}>
-									<MyTextField label="Email Address" name="email" />
-								</Grid>
-								<Grid item xs={12} sm={6}>
-									<MyTextField label="Contact Number" name="contact" />
-								</Grid>
-								<Grid item xs={12}>
-									<MyTextField label="Company" name="company" />
-								</Grid>
-								<Grid item xs={12}>
-									<MyTextField
-										label="I am interested in your franchise because:"
-										name="purpose"
-										multiline
-										rows={3}
-									/>
-								</Grid>
-								<Grid item xs={12}>
-									<MyTextField
-										label="Area/Site location proposed (Please describe):"
-										name="location"
-										multiline
-										rows={3}
-									/>
-								</Grid>
-								<Grid item sm={6}>
-									<FormControl
-										component="fieldset"
-										error={Boolean(
-											touched.active_passive && errors.active_passive
-										)}
-									>
-										<FormLabel component="legend">
-											I plan to be a franchisee:
-										</FormLabel>
-										<RadioGroup
-											name="active/passive"
-											{...getFieldProps('active_passive')}
+					{({values, touched, errors, getFieldProps, handleSubmit}) => {
+						if (values.consider_other != 'Yes') values.consider_specify = '';
+						if (values.lead_source != 'Others') values.other_source = '';
+
+						return (
+							<form
+								autoComplete="off"
+								action={`https://formsubmit.co/${Email.address}`}
+								method="POST"
+								ref={formEl}
+								onSubmit={handleSubmit}
+							>
+								<input type="hidden" name="_template" value="table" />
+								<input
+									type="hidden"
+									name="_subject"
+									value="Franchise Application"
+								/>
+								<Grid container spacing={2}>
+									<Grid item xs={12}>
+										<Typography variant="h5" align="center">
+											APPLICATION FORM
+										</Typography>
+									</Grid>
+									<Grid item xs={12}>
+										<MyTextField label="Complete Name" name="name" />
+									</Grid>
+									<Grid item xs={12}>
+										<MyTextField label="Home Address" name="address" />
+									</Grid>
+									<Grid item xs={12}>
+										<MyTextField label="Email Address" name="email" />
+									</Grid>
+									<Grid item xs={12} sm={6}>
+										<MyTextField label="Telephone Number" name="telephone" />
+									</Grid>
+									<Grid item xs={12} sm={6}>
+										<MyTextField label="Mobile Number" name="mobile" />
+									</Grid>
+									<Grid item xs={12}>
+										<MyTextField label="Company" name="company" />
+									</Grid>
+									<Grid item xs={12}>
+										<MyTextField label="Position" name="position" />
+									</Grid>
+									<Grid item xs={12}>
+										<MyTextField
+											label="Company Address"
+											name="company_address"
+										/>
+									</Grid>
+									<Grid item xs={12} sm={6}>
+										<MyTextField label="Company Telephone" name="company_tel" />
+									</Grid>
+									<Grid item xs={12} sm={6}>
+										<MyTextField label="Company Email" name="company_email" />
+									</Grid>
+									<Grid item xs={12}>
+										<MyTextField
+											label="Area/Location proposed for the franchise outlet (Please describe):"
+											name="area"
+											multiline
+											rows={3}
+										/>
+									</Grid>
+									<Grid item sm={4}>
+										<FormControl
+											component="fieldset"
+											error={Boolean(
+												touched.consider_other && errors.consider_other
+											)}
 										>
-											<FormControlLabel
-												value="Actively involved in the business"
-												control={<Radio />}
-												label="Actively involved in the business"
-											/>
-											<FormControlLabel
-												value="Passive and behind the scenes"
-												control={<Radio />}
-												label="Passive and behind the scenes"
-											/>
-										</RadioGroup>
-										<FormHelperText>
-											{touched.active_passive && errors.active_passive}
-										</FormHelperText>
-									</FormControl>
-								</Grid>
-								<Grid item sm={6}>
-									<FormControl
-										component="fieldset"
-										error={Boolean(
-											touched.individual_partners && errors.individual_partners
-										)}
-									>
-										<FormLabel component="legend">
-											I plan to operate the franchise:
-										</FormLabel>
-										<RadioGroup
-											name="individual/partners"
-											{...getFieldProps('individual_partners')}
+											<FormLabel component="legend">
+												Will you consider other areas?
+											</FormLabel>
+											<RadioGroup
+												name="consider_other"
+												{...getFieldProps('consider_other')}
+											>
+												<FormControlLabel
+													value="Yes"
+													control={<Radio />}
+													label="Yes"
+												/>
+												<FormControlLabel
+													value="No"
+													control={<Radio />}
+													label="No"
+												/>
+											</RadioGroup>
+											<FormHelperText>
+												{touched.consider_other && errors.consider_other}
+											</FormHelperText>
+										</FormControl>
+									</Grid>
+									<Grid item xs={8}>
+										<MyTextField
+											fast={false}
+											disabled={values.consider_other != 'Yes'}
+											label="Specify other area:"
+											name="consider_specify"
+											multiline
+											rows={3}
+										/>
+									</Grid>
+									<Grid item xs={12}>
+										<MyTextField
+											label="I can invest the total amount of (in pesos):"
+											name="investment"
+										/>
+									</Grid>
+									<Grid item sm={6}>
+										<FormControl
+											component="fieldset"
+											error={Boolean(
+												touched.active_passive && errors.active_passive
+											)}
 										>
-											<FormControlLabel
-												value="As an individual"
-												control={<Radio />}
-												label="As an individual"
-											/>
-											<FormControlLabel
-												value="With Partners"
-												control={<Radio />}
-												label="With Partners"
-											/>
-										</RadioGroup>
-										<FormHelperText>
-											{touched.individual_partners &&
-												errors.individual_partners}
-										</FormHelperText>{' '}
-									</FormControl>
+											<FormLabel component="legend">
+												I plan to be a Franchisee:
+											</FormLabel>
+											<RadioGroup
+												name="active/passive"
+												{...getFieldProps('active_passive')}
+											>
+												<FormControlLabel
+													value="Actively involved in the business"
+													control={<Radio />}
+													label="Actively involved in the business"
+												/>
+												<FormControlLabel
+													value="Passive and behind the scenes"
+													control={<Radio />}
+													label="Passive and behind the scenes"
+												/>
+											</RadioGroup>
+											<FormHelperText>
+												{touched.active_passive && errors.active_passive}
+											</FormHelperText>
+										</FormControl>
+									</Grid>
+									<Grid item sm={6}>
+										<FormControl
+											component="fieldset"
+											error={Boolean(
+												touched.individual_partners &&
+													errors.individual_partners
+											)}
+										>
+											<FormLabel component="legend">
+												I plan to operate the franchise:
+											</FormLabel>
+											<RadioGroup
+												name="individual/partners"
+												{...getFieldProps('individual_partners')}
+											>
+												<FormControlLabel
+													value="As an individual"
+													control={<Radio />}
+													label="As an individual"
+												/>
+												<FormControlLabel
+													value="With Partners"
+													control={<Radio />}
+													label="With Partners"
+												/>
+											</RadioGroup>
+											<FormHelperText>
+												{touched.individual_partners &&
+													errors.individual_partners}
+											</FormHelperText>{' '}
+										</FormControl>
+									</Grid>
+									<Grid item xs={12}>
+										<MyTextField
+											label="Other businesses:"
+											name="other_businesses"
+										/>
+									</Grid>
+									<Grid item sm={12}>
+										<FormControl
+											component="fieldset"
+											error={Boolean(touched.lead_source && errors.lead_source)}
+										>
+											<FormLabel component="legend">
+												How did you hear about us:
+											</FormLabel>
+											<RadioGroup
+												name="lead_source"
+												{...getFieldProps('lead_source')}
+											>
+												<Grid container spacing={2}>
+													<Grid item sm={3}>
+														<FormControlLabel
+															value="Asian Expo"
+															control={<Radio />}
+															label="Asian Expo"
+														/>
+													</Grid>
+													<Grid item sm={3}>
+														<FormControlLabel
+															value="Facebook"
+															control={<Radio />}
+															label="Facebook"
+														/>
+													</Grid>
+													<Grid item sm={3}>
+														<FormControlLabel
+															value="Advertisement"
+															control={<Radio />}
+															label="Advertisement"
+														/>
+													</Grid>
+													<Grid item sm={3}>
+														<FormControlLabel
+															value="Referral"
+															control={<Radio />}
+															label="Referral"
+														/>
+													</Grid>
+													<Grid item sm={3}>
+														<FormControlLabel
+															value="Others"
+															control={<Radio />}
+															label="Others"
+														/>
+													</Grid>
+													<Grid item xs={9}>
+														<MyTextField
+															fast={false}
+															disabled={values.lead_source != 'Others'}
+															label="Other source:"
+															name="other_source"
+														/>
+													</Grid>
+												</Grid>
+											</RadioGroup>
+											<FormHelperText>
+												{touched.lead_source && errors.lead_source}
+											</FormHelperText>{' '}
+										</FormControl>
+									</Grid>
+									<Grid item sm={6}>
+										<FormControl
+											component="fieldset"
+											error={Boolean(touched.request && errors.request)}
+										>
+											<FormLabel component="legend">
+												I would like to request for a:
+											</FormLabel>
+											<RadioGroup name="request" {...getFieldProps('request')}>
+												<Grid container spacing={2}>
+													<Grid item sm={6}>
+														<FormControlLabel
+															value="Business meeting"
+															control={<Radio />}
+															label="Business meeting"
+														/>
+													</Grid>
+													<Grid item sm={6}>
+														<FormControlLabel
+															value="Franchise presentation"
+															control={<Radio />}
+															label="Franchise presentation"
+														/>
+													</Grid>
+												</Grid>
+											</RadioGroup>
+											<FormHelperText>
+												{touched.request && errors.request}
+											</FormHelperText>
+										</FormControl>
+									</Grid>
+									<Grid item xs={6}>
+										<DateTimePicker label="Date & Time:" name="date_time" />
+									</Grid>
+									<Grid item xs={12}>
+										<Button
+											size="large"
+											variant="outlined"
+											endIcon={<SendIcon />}
+											fullWidth={true}
+											type="submit"
+										>
+											Submit
+										</Button>
+									</Grid>
 								</Grid>
-								<Grid item xs={12}>
-									<MyTextField
-										label="I can invest the total amount of (in pesos):"
-										name="investment"
-									/>
-								</Grid>
-								<Grid item xs={12}>
-									<Button
-										size="large"
-										variant="outlined"
-										endIcon={<SendIcon />}
-										fullWidth={true}
-										type="submit"
-									>
-										Submit
-									</Button>
-								</Grid>
-							</Grid>
-						</form>
-					)}
+							</form>
+						);
+					}}
 				</Formik>
 			</Paper>
 		</Container>
