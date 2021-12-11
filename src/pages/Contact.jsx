@@ -29,7 +29,7 @@ const socials = [
 	{
 		icon: FaInstagram,
 		title: 'Instagram',
-		link: 'https://www.instagram.com/pizza_stack_ph/'
+		link: 'https://www.instagram.com/pizzastack.ph/'
 	}
 ];
 export default function Contact() {
