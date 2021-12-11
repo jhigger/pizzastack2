@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './Form/Form';
 import {Box, Container, Image} from '@chakra-ui/react';
 import FAQs from './FAQs';
-import why from '../../assets/why.webp';
+import why from '../../assets/images/why.webp';
 
 export default function Franchise() {
 	return (
