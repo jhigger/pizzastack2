@@ -96,7 +96,7 @@ export default function ApplicationForm() {
 						request: Yup.string().required('Required'),
 						date_time: Yup.string().required('Required')
 					})}
-					onSubmit={({values}) => {
+					onSubmit={() => {
 						formEl.current.submit();
 					}}
 				>
@@ -104,7 +104,6 @@ export default function ApplicationForm() {
 						if (values.consider_other_areas != 'Yes')
 							values.consider_specify = '';
 						if (values.lead_source != 'Others') values.other_source = '';
-						console.log(values);
 
 						return (
 							<form
