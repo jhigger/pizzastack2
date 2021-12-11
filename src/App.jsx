@@ -17,6 +17,7 @@ import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
+import About from './pages/About';
 import Contact from './pages/Contact';
 import Franchise from './pages/Franchise/Franchise';
 
@@ -35,7 +36,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route path="/menu" component={Menu} />
-					<Route path="/about">About</Route>
+					<Route path="/about" component={About} />
 					<Route path="/contact" component={Contact} />
 					<Route path="/franchise" component={Franchise} />
 				</Switch>
