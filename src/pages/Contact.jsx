@@ -12,6 +12,8 @@ import {
 import {FaYoutube} from '@react-icons/all-files/fa/FaYoutube';
 import {FaFacebookSquare} from '@react-icons/all-files/fa/FaFacebookSquare';
 import {FaInstagram} from '@react-icons/all-files/fa/FaInstagram';
+import {MdLocationOn} from '@react-icons/all-files/md/MdLocationOn';
+import {MdEmail} from '@react-icons/all-files/md/MdEmail';
 
 const socials = [
 	{
@@ -45,7 +47,8 @@ export default function Contact() {
 						fontWeight="semibold"
 						letterSpacing="widest"
 					>
-						Address: 363 Legarda Rd, Baguio City, Benguet
+						<Icon w={6} h={6} as={MdLocationOn} /> 363 Legarda Rd, Baguio City,
+						Benguet
 					</Text>
 					<Text
 						color={'gray.400'}
@@ -54,7 +57,7 @@ export default function Contact() {
 						fontWeight="semibold"
 						letterSpacing="wider"
 					>
-						Email: Pizzastack.Franchising@google.com
+						<Icon w={6} h={6} as={MdEmail} /> Pizzastack.Franchising@google.com
 					</Text>
 				</Stack>
 
