@@ -7,11 +7,11 @@ import {
 	Link,
 	SimpleGrid
 } from '@chakra-ui/react';
-import italy from '../assets/italy.webp';
-import pizza_drink from '../assets/pizza_drink.webp';
-import uk from '../assets/uk.webp';
-import nectar from '../assets/nectar.webp';
-import ged from '../assets/ged.webp';
+import italy from '../assets/images/italy.webp';
+import pizza_drink from '../assets/images/pizza_drink.webp';
+import uk from '../assets/images/uk.webp';
+import nectar from '../assets/images/nectar.webp';
+import ged from '../assets/images/ged.webp';
 
 const images = {
 	avatar1: nectar,

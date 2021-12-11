@@ -7,7 +7,7 @@ import {
 	Image,
 	Heading
 } from '@chakra-ui/react';
-import pizzastack from '../assets/pizzastack.webp';
+import pizzastack from '../assets/images/pizzastack.webp';
 
 export default function Section1() {
 	return (

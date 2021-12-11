@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import {AiOutlineMenu} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/images/logo.png';
 
 const NavLink = ({to, text}) => {
 	return (

@@ -1,5 +1,5 @@
 import {Box, Text, Flex, Image} from '@chakra-ui/react';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/images/logo.png';
 
 export default function LargeWithLogoCentered() {
 	return (
