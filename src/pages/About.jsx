@@ -85,6 +85,7 @@ const AboutCard = ({image, title, text, flip = false, ...props}) => {
 		return (
 			<Box w={{lg: '50%'}}>
 				<Image
+					loading="lazy"
 					h={{base: 64, lg: 'full'}}
 					rounded={{lg: 'lg'}}
 					objectFit="cover"
@@ -165,7 +166,14 @@ const AboutAvatar = ({image, name, title}) => {
 			overflow="hidden"
 			mx="auto"
 		>
-			<Image w="full" h={96} fit="cover" src={image} alt="avatar" />
+			<Image
+				loading="lazy"
+				w="full"
+				h={96}
+				fit="cover"
+				src={image}
+				alt="avatar"
+			/>
 
 			<Box py={5} textAlign="center">
 				<Link display="block" fontSize="2xl" color={'white'} fontWeight="bold">

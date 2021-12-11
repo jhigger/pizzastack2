@@ -44,6 +44,7 @@ export default function Section1() {
 						with beverage, ALL IN ONE HAND!
 					</Text>
 					<Image
+						loading="lazy"
 						objectFit="cover"
 						alignSelf="center"
 						justifySelf="center"
