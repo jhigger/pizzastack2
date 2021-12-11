@@ -9,21 +9,21 @@ import {
 	Stack,
 	VStack
 } from '@chakra-ui/react';
-import {FaYoutube, FaFacebookSquare, FaInstagram} from 'react-icons/Fa';
+import {Fa} from 'react-icons';
 
 const socials = [
 	{
-		icon: FaYoutube,
+		icon: Fa.FaYoutube,
 		title: 'Youtube',
 		link: 'https://www.youtube.com/channel/UCSrtB2LcCGJXaK4XPY8nrJw'
 	},
 	{
-		icon: FaFacebookSquare,
+		icon: Fa.FaFacebookSquare,
 		title: 'Facebook',
 		link: 'https://www.facebook.com/PizzaStackTM'
 	},
 	{
-		icon: FaInstagram,
+		icon: Fa.FaInstagram,
 		title: 'Instagram',
 		link: 'https://www.instagram.com/pizza_stack_ph/'
 	}
