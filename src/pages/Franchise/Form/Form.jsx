@@ -46,7 +46,7 @@ export default function ApplicationForm() {
 						company_tel: '',
 						company_email: '',
 						area: '',
-						consider_other: 'No',
+						consider_other_areas: '',
 						consider_specify: '',
 						investment: '',
 						active_passive: '',
@@ -83,7 +83,7 @@ export default function ApplicationForm() {
 							.email('Invalid email')
 							.required('Required'),
 						area: Yup.string().required('Required'),
-						consider_other: Yup.string().required('Required'),
+						consider_other_areas: Yup.string().required('Required'),
 						consider_specify: Yup.string(),
 						investment: Yup.number()
 							.typeError('Please enter a valid currency number')
@@ -94,16 +94,17 @@ export default function ApplicationForm() {
 						lead_source: Yup.string().required('Required'),
 						other_source: Yup.string(),
 						request: Yup.string().required('Required'),
-						available: Yup.string().required('Required'),
 						date_time: Yup.string().required('Required')
 					})}
-					onSubmit={() => {
+					onSubmit={({values}) => {
 						formEl.current.submit();
 					}}
 				>
 					{({values, touched, errors, getFieldProps, handleSubmit}) => {
-						if (values.consider_other != 'Yes') values.consider_specify = '';
+						if (values.consider_other_areas != 'Yes')
+							values.consider_specify = '';
 						if (values.lead_source != 'Others') values.other_source = '';
+						console.log(values);
 
 						return (
 							<form
@@ -170,15 +171,16 @@ export default function ApplicationForm() {
 										<FormControl
 											component="fieldset"
 											error={Boolean(
-												touched.consider_other && errors.consider_other
+												touched.consider_other_areas &&
+													errors.consider_other_areas
 											)}
 										>
 											<FormLabel component="legend">
 												Will you consider other areas?
 											</FormLabel>
 											<RadioGroup
-												name="consider_other"
-												{...getFieldProps('consider_other')}
+												name="consider_other_areas"
+												{...getFieldProps('consider_other_areas')}
 											>
 												<FormControlLabel
 													value="Yes"
@@ -192,14 +194,15 @@ export default function ApplicationForm() {
 												/>
 											</RadioGroup>
 											<FormHelperText>
-												{touched.consider_other && errors.consider_other}
+												{touched.consider_other_areas &&
+													errors.consider_other_areas}
 											</FormHelperText>
 										</FormControl>
 									</Grid>
 									<Grid item xs={8}>
 										<MyTextField
 											fast={false}
-											disabled={values.consider_other != 'Yes'}
+											disabled={values.consider_other_areas != 'Yes'}
 											label="Specify other area:"
 											name="consider_specify"
 											multiline
