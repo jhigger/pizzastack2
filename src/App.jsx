@@ -20,6 +20,7 @@ import Menu from './pages/Menu';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Franchise from './pages/Franchise/Franchise';
+import NotFound from './pages/NotFound';
 
 const config = {
 	initialColorMode: 'dark',
@@ -35,10 +36,12 @@ function App() {
 				<Navbar />
 				<Switch>
 					<Route exact path="/" component={Home} />
-					<Route path="/menu" component={Menu} />
-					<Route path="/about" component={About} />
-					<Route path="/contact" component={Contact} />
-					<Route path="/franchise" component={Franchise} />
+					<Route exact path="/home" component={Home} />
+					<Route exact path="/menu" component={Menu} />
+					<Route exact path="/about" component={About} />
+					<Route exact path="/contact" component={Contact} />
+					<Route exact path="/franchise" component={Franchise} />
+					<Route component={NotFound} />
 				</Switch>
 				<Footer />
 			</Router>
