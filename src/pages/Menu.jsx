@@ -141,7 +141,7 @@ const Others = ({products}) => {
 export default function Menu() {
 	return (
 		<Flex
-			bg={'gray.600'}
+			bg={'gray.700'}
 			py={24}
 			px={5}
 			w="auto"
