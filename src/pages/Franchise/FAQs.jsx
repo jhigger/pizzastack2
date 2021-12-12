@@ -39,6 +39,7 @@ const Item = ({title, text, children, ...props}) => {
 					lineHeight="tall"
 					fontWeight="normal"
 					letterSpacing="wide"
+					as={'div'}
 				>
 					{text || children}
 				</Text>
