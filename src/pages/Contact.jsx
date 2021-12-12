@@ -7,7 +7,8 @@ import {
 	Icon,
 	Text,
 	Stack,
-	VStack
+	VStack,
+	HStack
 } from '@chakra-ui/react';
 import {FaYoutube} from '@react-icons/all-files/fa/FaYoutube';
 import {FaFacebookSquare} from '@react-icons/all-files/fa/FaFacebookSquare';
@@ -32,17 +33,36 @@ const socials = [
 		link: 'https://www.instagram.com/pizzastack.ph/'
 	}
 ];
+
+const Map = ({...props}) => {
+	return (
+		<Box my={4} {...props}>
+			<iframe
+				width="100%"
+				height="400"
+				frameBorder="0"
+				scrolling="no"
+				marginHeight="0"
+				marginWidth="0"
+				src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Pizza%20Stack%20363%20Legarda%20Rd,%20Baguio,%20Benguet+(Pizza%20Stack)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+			>
+				<a href="https://www.gps.ie/car-satnav-gps/">sat navs</a>
+			</iframe>
+		</Box>
+	);
+};
+
 export default function Contact() {
 	return (
 		<Container
 			pt={{base: 12, md: 24}}
-			pb={12}
 			mx="auto"
 			shadow="xl"
 			maxW="container.xl"
 		>
-			<Box p={{base: 1, md: 12}}>
-				<Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
+			<SimpleGrid p={{base: 1, md: 12}} columns={{base: 1, lg: 2}}>
+				<Map display={{base: 'none', lg: 'block'}} />
+				<VStack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
 					<Heading fontSize={{base: '2xl', md: '4xl'}} my={8}>
 						You Can Find Us Here
 					</Heading>
@@ -65,38 +85,28 @@ export default function Contact() {
 					>
 						<Icon w={6} h={6} as={MdEmail} /> Pizzastack.Franchising@google.com
 					</Text>
-				</Stack>
-				<Container maxW={'xl'} my={12}>
-					<SimpleGrid columns={{base: 3}} spacing={12}>
-						{socials.map((social, i) => (
-							<chakra.a
-								fontSize={{base: 'xs', md: 'xl'}}
-								fontWeight="medium"
-								ml="2"
-								href={social.link}
-								target="_blank"
-								key={i}
-							>
-								<VStack align={'center'}>
-									<Icon w={12} h={12} as={social.icon} />
-									<Text fontWeight={400}>{social.title}</Text>
-								</VStack>
-							</chakra.a>
-						))}
-					</SimpleGrid>
-				</Container>
-			</Box>
-			<iframe
-				width="100%"
-				height="600"
-				frameBorder="0"
-				scrolling="no"
-				marginHeight="0"
-				marginWidth="0"
-				src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Pizza%20Stack%20363%20Legarda%20Rd,%20Baguio,%20Benguet+(Pizza%20Stack)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-			>
-				<a href="https://www.gps.ie/car-satnav-gps/">sat navs</a>
-			</iframe>
+					<Container maxW={'xl'} py={4} justify="center">
+						<SimpleGrid columns={{base: 3}} spacing={12}>
+							{socials.map((social, i) => (
+								<chakra.a
+									fontSize={{base: 'xs', md: 'xl'}}
+									fontWeight="medium"
+									ml="2"
+									href={social.link}
+									target="_blank"
+									key={i}
+								>
+									<VStack align={'center'}>
+										<Icon w={12} h={12} as={social.icon} />
+										<Text fontWeight={400}>{social.title}</Text>
+									</VStack>
+								</chakra.a>
+							))}
+						</SimpleGrid>
+					</Container>
+				</VStack>
+				<Map display={{base: 'block', lg: 'none'}} />
+			</SimpleGrid>
 		</Container>
 	);
 }

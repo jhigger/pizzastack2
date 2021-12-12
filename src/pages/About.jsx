@@ -5,7 +5,8 @@ import {
 	Image,
 	Flex,
 	Link,
-	SimpleGrid
+	SimpleGrid,
+	Text
 } from '@chakra-ui/react';
 import italy from '../assets/images/italy.webp';
 import pizza_drink from '../assets/images/pizza_drink.webp';
@@ -172,12 +173,12 @@ const AboutAvatar = ({image, name, title}) => {
 			/>
 
 			<Box py={5} textAlign="center">
-				<Link display="block" fontSize="2xl" color={'white'} fontWeight="bold">
+				<Text fontSize="2xl" color={'white'} fontWeight="bold">
 					{name}
-				</Link>
-				<chakra.span fontSize="sm" color={'gray.200'}>
+				</Text>
+				<Text fontSize="sm" color={'gray.200'}>
 					{title}
-				</chakra.span>
+				</Text>
 			</Box>
 		</Box>
 	);
