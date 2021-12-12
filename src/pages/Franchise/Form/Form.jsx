@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Button from '@material-ui/core/Button';
 import {makeStyles} from '@material-ui/core/styles';
 import {Paper, Typography} from '@material-ui/core';
@@ -100,10 +100,29 @@ export default function ApplicationForm() {
 						formEl.current.submit();
 					}}
 				>
-					{({values, touched, errors, getFieldProps, handleSubmit}) => {
+					{({
+						values,
+						touched,
+						errors,
+						getFieldProps,
+						handleSubmit,
+						isSubmitting,
+						isValidating
+					}) => {
 						if (values.consider_other_areas != 'Yes')
 							values.consider_specify = '';
 						if (values.lead_source != 'Others') values.other_source = '';
+
+						useEffect(() => {
+							const firstError = Object.keys(errors)[0];
+							const errorElement = document.getElementsByName(firstError)[0];
+							if (isSubmitting && errorElement) {
+								errorElement.scrollIntoView({
+									behavior: 'smooth',
+									block: 'center'
+								});
+							}
+						}, [isSubmitting, errors, isValidating]);
 
 						return (
 							<form
