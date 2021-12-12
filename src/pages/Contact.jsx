@@ -63,13 +63,14 @@ export default function Contact() {
 
 				<Container maxW={'xl'} mt={12}>
 					<SimpleGrid columns={{base: 1, md: 3}} spacing={12}>
-						{socials.map((social) => (
+						{socials.map((social, i) => (
 							<chakra.a
 								fontSize={{base: 'xs', md: 'xl'}}
 								fontWeight="medium"
 								ml="2"
 								href={social.link}
 								target="_blank"
+								key={i}
 							>
 								<VStack align={'center'}>
 									<Icon w={12} h={12} as={social.icon} />
@@ -83,10 +84,10 @@ export default function Contact() {
 			<iframe
 				width="100%"
 				height="600"
-				frameborder="0"
+				frameBorder="0"
 				scrolling="no"
-				marginheight="0"
-				marginwidth="0"
+				marginHeight="0"
+				marginWidth="0"
 				src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Pizza%20Stack%20363%20Legarda%20Rd,%20Baguio,%20Benguet+(Pizza%20Stack)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
 			>
 				<a href="https://www.gps.ie/car-satnav-gps/">sat navs</a>
