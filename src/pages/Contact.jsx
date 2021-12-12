@@ -60,7 +60,7 @@ export default function Contact() {
 						color={'gray.400'}
 						fontSize={{base: 'sm', md: 'xl'}}
 						lineHeight="tall"
-						fontWeight="thin"
+						fontWeight={{base: 'thin', md: 'semibold'}}
 						letterSpacing={{base: 'wider', md: 'widest'}}
 					>
 						<Icon w={6} h={6} as={MdEmail} /> Pizzastack.Franchising@google.com

@@ -81,7 +81,7 @@ const AboutCard = ({image, title, text, flip = false, ...props}) => {
 		return (
 			<Box w={{lg: '50%'}}>
 				<Image
-					loading="lazy"
+					loading="eager"
 					h={{base: 64, lg: 'full'}}
 					rounded={{lg: 'lg'}}
 					objectFit="cover"

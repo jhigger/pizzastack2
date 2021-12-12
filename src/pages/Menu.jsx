@@ -1,5 +1,12 @@
 import React from 'react';
-import {chakra, Box, SimpleGrid, Flex, Container} from '@chakra-ui/react';
+import {
+	chakra,
+	Box,
+	SimpleGrid,
+	Flex,
+	Container,
+	useMediaQuery
+} from '@chakra-ui/react';
 import data from '../assets/menu.json';
 
 const MenuItem = ({title, children, length}) => {
@@ -54,8 +61,9 @@ const ProductDesc = ({desc, ...props}) => {
 };
 
 const ProductPrice = ({text, dots, price}) => {
+	const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
 	const printDots = () => {
-		return '.'.repeat(dots.base || dots.md - price.length);
+		return '.'.repeat(isLargerThan800 ? dots.md : dots.base - price.length);
 	};
 
 	return (
