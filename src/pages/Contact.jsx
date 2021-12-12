@@ -62,7 +62,7 @@ export default function Contact() {
 				</Stack>
 
 				<Container maxW={'xl'} mt={12}>
-					<SimpleGrid columns={{base: 1, md: 3}} spacing={12}>
+					<SimpleGrid columns={{base: 3}} spacing={12}>
 						{socials.map((social, i) => (
 							<chakra.a
 								fontSize={{base: 'xs', md: 'xl'}}
