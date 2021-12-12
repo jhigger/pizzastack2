@@ -41,33 +41,32 @@ export default function Contact() {
 			shadow="xl"
 			maxW="container.xl"
 		>
-			<Box p={{base: 4, md: 12}}>
+			<Box p={{base: 1, md: 12}}>
 				<Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
-					<Heading fontSize={'4xl'} my={8}>
+					<Heading fontSize={{base: '2xl', md: '4xl'}} my={8}>
 						You Can Find Us Here
 					</Heading>
 					<Text
 						color={'gray.400'}
-						fontSize={'xl'}
+						fontSize={{base: 'sm', md: 'xl'}}
 						lineHeight="tall"
 						fontWeight="semibold"
-						letterSpacing="widest"
+						letterSpacing={{base: 'wider', md: 'widest'}}
 					>
 						<Icon w={6} h={6} as={MdLocationOn} /> 363 Legarda Rd, Baguio City,
 						Benguet
 					</Text>
 					<Text
 						color={'gray.400'}
-						fontSize={'xl'}
+						fontSize={{base: 'sm', md: 'xl'}}
 						lineHeight="tall"
-						fontWeight="semibold"
-						letterSpacing="wider"
+						fontWeight="thin"
+						letterSpacing={{base: 'wider', md: 'widest'}}
 					>
 						<Icon w={6} h={6} as={MdEmail} /> Pizzastack.Franchising@google.com
 					</Text>
 				</Stack>
-
-				<Container maxW={'xl'} mt={12}>
+				<Container maxW={'xl'} my={12}>
 					<SimpleGrid columns={{base: 3}} spacing={12}>
 						{socials.map((social, i) => (
 							<chakra.a
