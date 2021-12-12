@@ -12,7 +12,12 @@ import pizzastack from '../assets/images/pizzastack.webp';
 export default function Section1() {
 	return (
 		<Box bg="black" color="white" w="full" h="min" position="relative">
-			<Container maxW="container.xl" justify="center" align="center" p="12">
+			<Container
+				maxW="container.xl"
+				justify="center"
+				align="center"
+				p={{base: 1, md: 12}}
+			>
 				<SimpleGrid columns={{base: 1, lg: 2}} spacing="1">
 					<Box alignSelf="center" m="10">
 						<Heading

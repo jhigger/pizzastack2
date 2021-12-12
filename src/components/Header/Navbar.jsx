@@ -63,7 +63,7 @@ export default function Navbar() {
 						alignItems="center"
 						justifyContent="space-between"
 						mx="auto"
-						px={5}
+						px={{base: 1, md: 5}}
 						h={{base: '2rem', md: '100%'}}
 					>
 						<chakra.a

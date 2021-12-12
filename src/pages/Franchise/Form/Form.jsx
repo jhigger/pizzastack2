@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
 	paper: {
 		backgroundColor: theme.palette.background.paper,
 		boxShadow: theme.shadows[5],
-		padding: theme.spacing(2, 4, 3),
-		margin: theme.spacing(3)
+		padding: theme.spacing(4, 3, 3),
+		margin: theme.spacing(0, 0, 4)
 	}
 }));
 
@@ -185,7 +185,7 @@ export default function ApplicationForm() {
 											rows={3}
 										/>
 									</Grid>
-									<Grid item sm={4}>
+									<Grid item xs={12} sm={4}>
 										<FormControl
 											component="fieldset"
 											error={Boolean(
@@ -217,7 +217,7 @@ export default function ApplicationForm() {
 											</FormHelperText>
 										</FormControl>
 									</Grid>
-									<Grid item xs={8}>
+									<Grid item xs={12} sm={8}>
 										<MyTextField
 											fast={false}
 											disabled={values.consider_other_areas != 'Yes'}
@@ -233,7 +233,7 @@ export default function ApplicationForm() {
 											name="investment"
 										/>
 									</Grid>
-									<Grid item sm={6}>
+									<Grid item xs={12} sm={6}>
 										<FormControl
 											component="fieldset"
 											error={Boolean(
@@ -263,7 +263,7 @@ export default function ApplicationForm() {
 											</FormHelperText>
 										</FormControl>
 									</Grid>
-									<Grid item sm={6}>
+									<Grid item xs={12} sm={6}>
 										<FormControl
 											component="fieldset"
 											error={Boolean(
@@ -301,7 +301,7 @@ export default function ApplicationForm() {
 											name="other_businesses"
 										/>
 									</Grid>
-									<Grid item sm={12}>
+									<Grid item xs={12}>
 										<FormControl
 											component="fieldset"
 											error={Boolean(touched.lead_source && errors.lead_source)}
@@ -349,7 +349,7 @@ export default function ApplicationForm() {
 															label="Others"
 														/>
 													</Grid>
-													<Grid item xs={9}>
+													<Grid item xs={12} sm={9}>
 														<MyTextField
 															fast={false}
 															disabled={values.lead_source != 'Others'}
@@ -364,7 +364,7 @@ export default function ApplicationForm() {
 											</FormHelperText>{' '}
 										</FormControl>
 									</Grid>
-									<Grid item sm={6}>
+									<Grid item xs={12} sm={6}>
 										<FormControl
 											component="fieldset"
 											error={Boolean(touched.request && errors.request)}
@@ -395,7 +395,7 @@ export default function ApplicationForm() {
 											</FormHelperText>
 										</FormControl>
 									</Grid>
-									<Grid item xs={6}>
+									<Grid item xs={12} sm={6}>
 										<DateTimePicker label="Date & Time:" name="date_time" />
 									</Grid>
 									<Grid item xs={12}>

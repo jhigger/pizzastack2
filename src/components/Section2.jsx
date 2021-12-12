@@ -17,7 +17,12 @@ import slide3 from '../assets/images/slide3.webp';
 export default function Section2() {
 	return (
 		<Box bg="black" color="white" w="full" h="min">
-			<Container maxW="container.xl" justify="center" align="center" p="12">
+			<Container
+				maxW="container.xl"
+				justify="center"
+				align="center"
+				p={{base: 1, md: 12}}
+			>
 				<SimpleGrid columns={{base: 1, lg: 2}} spacing="1">
 					<Carousel />
 					<Box alignSelf="center" m="10">
@@ -131,9 +136,14 @@ const Carousel = () => {
 	}, [currentSlide]);
 
 	return (
-		<Flex w="full" p={10} alignItems="center" justifyContent="center">
+		<Flex
+			w="full"
+			p={{base: 1, md: 12}}
+			alignItems="center"
+			justifyContent="center"
+		>
 			<Flex w="full" pos="relative" overflow="hidden">
-				<Flex h="3xl" w="full" {...carouselStyle}>
+				<Flex h={{base: 'lg', md: '3xl'}} w="full" {...carouselStyle}>
 					{slides.map((slide, sid) => (
 						<Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
 							<Image src={slide.img} boxSize="full" backgroundSize="contain" />

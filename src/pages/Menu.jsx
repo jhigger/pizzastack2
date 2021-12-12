@@ -55,7 +55,7 @@ const ProductDesc = ({desc, ...props}) => {
 
 const ProductPrice = ({text, dots, price}) => {
 	const printDots = () => {
-		return '.'.repeat(dots - price.length);
+		return '.'.repeat(dots.base || dots.md - price.length);
 	};
 
 	return (
@@ -83,12 +83,12 @@ const PizzaPrices = ({products}) => {
 						<ProductDesc desc={product.desc} />
 						<ProductPrice
 							text={'Classic'}
-							dots={40}
+							dots={{base: 20, md: 40}}
 							price={product.size.classic}
 						/>
 						<ProductPrice
 							text="Premium"
-							dots={37}
+							dots={{base: 17, md: 37}}
 							price={product.size.premium}
 						/>
 					</Box>
@@ -125,11 +125,15 @@ const Others = ({products}) => {
 						</Flex>
 						<ProductPrice
 							text={'Regular'}
-							dots={40}
+							dots={{base: 20, md: 40}}
 							price={product.size.regular}
 						/>
 						{product.size.large && (
-							<ProductPrice text="Large" dots={43} price={product.size.large} />
+							<ProductPrice
+								text="Large"
+								dots={{base: 23, md: 43}}
+								price={product.size.large}
+							/>
 						)}
 					</Box>
 				);
@@ -142,8 +146,8 @@ export default function Menu() {
 	return (
 		<Flex
 			bg={'gray.700'}
-			py={24}
-			px={5}
+			py={{base: 1, md: 24}}
+			px={{base: 1, md: 5}}
 			w="auto"
 			justifyContent="center"
 			alignItems="center"

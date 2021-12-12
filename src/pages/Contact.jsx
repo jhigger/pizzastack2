@@ -34,8 +34,14 @@ const socials = [
 ];
 export default function Contact() {
 	return (
-		<Container pt={24} pb={12} mx="auto" shadow="xl" maxW="container.xl">
-			<Box p={12}>
+		<Container
+			pt={{base: 12, md: 24}}
+			pb={12}
+			mx="auto"
+			shadow="xl"
+			maxW="container.xl"
+		>
+			<Box p={{base: 4, md: 12}}>
 				<Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
 					<Heading fontSize={'4xl'} my={8}>
 						You Can Find Us Here

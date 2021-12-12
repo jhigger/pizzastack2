@@ -26,19 +26,13 @@ export default function About() {
 	return (
 		<Flex
 			bg={'gray.700'}
-			py={24}
-			px={5}
+			py={{base: 3, md: 24}}
+			px={{base: 0, md: 5}}
 			w="auto"
 			justifyContent="center"
 			alignItems="center"
 		>
-			<Container
-				px={8}
-				py={8}
-				maxW="container.xl"
-				align="center"
-				justify="center"
-			>
+			<Container maxW="container.xl" align="center" justify="center">
 				<AboutCard
 					mt={8}
 					image={images.card1}
@@ -102,8 +96,8 @@ const AboutCard = ({image, title, text, flip = false, ...props}) => {
 	const CardBody = () => {
 		return (
 			<Box
-				py={12}
-				px={6}
+				py={{base: 6, md: 12}}
+				px={{base: 4, md: 6}}
 				maxW={{base: 'xl', lg: '5xl'}}
 				w={{lg: '50%'}}
 				bg="yellow.50"
@@ -161,7 +155,7 @@ const AboutCard = ({image, title, text, flip = false, ...props}) => {
 const AboutAvatar = ({image, name, title}) => {
 	return (
 		<Box
-			w="xs"
+			w="max"
 			bg={'gray.800'}
 			shadow="lg"
 			rounded="lg"
@@ -170,7 +164,7 @@ const AboutAvatar = ({image, name, title}) => {
 		>
 			<Image
 				loading="lazy"
-				w="full"
+				w={{base: '2xs', md: 'full'}}
 				h={96}
 				fit="cover"
 				src={image}
