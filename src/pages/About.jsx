@@ -83,7 +83,7 @@ const AboutCard = ({image, title, text, flip = false, ...props}) => {
 			<Box w={{lg: '50%'}}>
 				<Image
 					loading="eager"
-					h={{base: 64, lg: 'full'}}
+					h={{lg: 'full'}}
 					rounded={{lg: 'lg'}}
 					objectFit="cover"
 					alignSelf="center"
@@ -127,7 +127,7 @@ const AboutCard = ({image, title, text, flip = false, ...props}) => {
 			bg={'white'}
 			mx={{lg: 8}}
 			display={{lg: 'flex'}}
-			maxW={{lg: '5xl'}}
+			maxW={{base: 'xl', lg: '5xl'}}
 			shadow={{lg: 'lg'}}
 			rounded={{lg: 'lg'}}
 			{...props}
