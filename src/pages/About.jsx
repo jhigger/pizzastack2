@@ -122,21 +122,6 @@ const AboutCard = ({image, title, text, flip = false, ...props}) => {
 		);
 	};
 
-	if (flip)
-		return (
-			<Box
-				bg={'white'}
-				mx={{lg: 8}}
-				display={{lg: 'flex'}}
-				maxW={{lg: '5xl'}}
-				shadow={{lg: 'lg'}}
-				rounded={{lg: 'lg'}}
-				{...props}
-			>
-				<CardBody />
-				<CardImage />
-			</Box>
-		);
 	return (
 		<Box
 			bg={'white'}
@@ -147,8 +132,17 @@ const AboutCard = ({image, title, text, flip = false, ...props}) => {
 			rounded={{lg: 'lg'}}
 			{...props}
 		>
-			<CardImage />
-			<CardBody />
+			{flip ? (
+				<>
+					<CardBody />
+					<CardImage />
+				</>
+			) : (
+				<>
+					<CardImage />
+					<CardBody />
+				</>
+			)}
 		</Box>
 	);
 };
