@@ -119,7 +119,7 @@ export default function FAQs() {
 						</chakra.ul>
 					</Item>
 					<Item
-						title="Will I have and exclusive territory?"
+						title="Will I have an exclusive territory?"
 						text="You will not be granted an exclusive territory. Pizza stack shall grant a single unit franchise for every 10,000 population in a given trade area. However, franchisor will see to it that each site will service the population to the fullest to make the business viable."
 					/>
 					<Item
