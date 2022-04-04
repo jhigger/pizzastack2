@@ -15,7 +15,6 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import MyTextField from './MyTextField';
 import Email from '../../../assets/email.json';
-import DateTimePicker from './DateTimePicker';
 
 const useStyles = makeStyles((theme) => ({
 	paper: {
@@ -48,14 +47,12 @@ export default function ApplicationForm() {
 						area: '',
 						consider_other_areas: '',
 						consider_specify: '',
-						investment: '',
 						active_passive: '',
 						individual_partners: '',
 						other_businesses: '',
 						lead_source: '',
 						other_source: '',
-						request: '',
-						date_time: ''
+						request: ''
 					}}
 					validationSchema={Yup.object({
 						name: Yup.string()
@@ -85,16 +82,12 @@ export default function ApplicationForm() {
 						area: Yup.string().required('Required'),
 						consider_other_areas: Yup.string().required('Required'),
 						consider_specify: Yup.string(),
-						investment: Yup.number()
-							.typeError('Please enter a valid currency number')
-							.required('Required'),
 						active_passive: Yup.string().required('Required'),
 						individual_partners: Yup.string().required('Required'),
 						other_businesses: Yup.string(),
 						lead_source: Yup.string().required('Required'),
 						other_source: Yup.string(),
-						request: Yup.string().required('Required'),
-						date_time: Yup.string().required('Required')
+						request: Yup.string().required('Required')
 					})}
 					onSubmit={() => {
 						formEl.current.submit();
@@ -225,12 +218,6 @@ export default function ApplicationForm() {
 											name="consider_specify"
 											multiline
 											rows={3}
-										/>
-									</Grid>
-									<Grid item xs={12}>
-										<MyTextField
-											label="I can invest the total amount of (in pesos):"
-											name="investment"
 										/>
 									</Grid>
 									<Grid item xs={12} sm={6}>
@@ -364,7 +351,7 @@ export default function ApplicationForm() {
 											</FormHelperText>{' '}
 										</FormControl>
 									</Grid>
-									<Grid item xs={12} sm={6}>
+									<Grid item xs={12}>
 										<FormControl
 											component="fieldset"
 											error={Boolean(touched.request && errors.request)}
@@ -394,9 +381,6 @@ export default function ApplicationForm() {
 												{touched.request && errors.request}
 											</FormHelperText>
 										</FormControl>
-									</Grid>
-									<Grid item xs={12} sm={6}>
-										<DateTimePicker label="Date & Time:" name="date_time" />
 									</Grid>
 									<Grid item xs={12}>
 										<Button
