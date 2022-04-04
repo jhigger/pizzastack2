@@ -4,7 +4,7 @@ import Logo from '../assets/images/logo.png';
 export default function LargeWithLogoCentered() {
 	return (
 		<Box bg={'gray.900'} color={'gray.200'}>
-			<Box py={10}>
+			<Box py={5}>
 				<Flex
 					align={'center'}
 					_before={{
@@ -22,12 +22,12 @@ export default function LargeWithLogoCentered() {
 						ml: 8
 					}}
 				>
-					<Image src={Logo} alt="Logo" boxSize="10rem" objectFit="contain" />
+					<Image src={Logo} alt="Logo" boxSize="8rem" objectFit="contain" />
 				</Flex>
-				<Text pt={6} fontSize={'sm'} textAlign={'center'}>
+				<Text pt={3} fontSize={'xs'} textAlign={'center'}>
 					363 Legarda Rd, Baguio City, Benguet
 				</Text>
-				<Text pt={6} fontSize={'sm'} textAlign={'center'}>
+				<Text pt={3} fontSize={'xs'} textAlign={'center'}>
 					© 2021 PizzaStack&trade;. All rights reserved
 				</Text>
 			</Box>
