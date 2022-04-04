@@ -1,4 +1,5 @@
 import {Box, Heading, Text, Button} from '@chakra-ui/react';
+import {Link} from 'react-router-dom';
 
 export default function NotFound() {
 	return (
@@ -19,15 +20,17 @@ export default function NotFound() {
 				The page you're looking for does not seem to exist
 			</Text>
 
-			<Button
-				colorScheme="teal"
-				bgGradient="linear(to-r, yellow.400, red.500)"
-				color="white"
-				variant="solid"
-				_hover={{bg: 'yellow', textColor: 'black'}}
-			>
-				Go to Home
-			</Button>
+			<Link to={'/'}>
+				<Button
+					colorScheme="teal"
+					bgGradient="linear(to-r, yellow.400, red.500)"
+					color="white"
+					variant="solid"
+					_hover={{bg: 'yellow', textColor: 'black'}}
+				>
+					Go to Home
+				</Button>
+			</Link>
 		</Box>
 	);
 }
