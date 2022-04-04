@@ -4,7 +4,6 @@ import {
 	chakra,
 	Image,
 	Flex,
-	Link,
 	SimpleGrid,
 	Text
 } from '@chakra-ui/react';
