@@ -169,19 +169,13 @@ export default function Menu() {
 				maxW="container.xl"
 			>
 				{data.menu.map((item, i) => {
-					if (i == 0)
+					if (i == 0 || i == 1)
 						return (
 							<MenuItem
 								title={item.title}
 								key={i}
 								length={item.products.length}
 							>
-								<PizzaPrices products={item.products} />
-							</MenuItem>
-						);
-					if (i == 1)
-						return (
-							<MenuItem title={item.title} key={i}>
 								<PizzaPrices products={item.products} />
 							</MenuItem>
 						);

@@ -1,27 +1,6 @@
 {
   "menu": [
     {
-      "title": "Boxes of Pizza",
-      "products": [
-        {
-          "name": "Box of 9",
-          "desc": "9 pcs 4 inch sized pizza",
-          "size": {
-            "classic": "P240.00",
-            "premium": "P260.00"
-          }
-        },
-        {
-          "name": "Box of 12",
-          "desc": "12 pcs 4 inch sized pizza",
-          "size": {
-            "classic": "P320.00",
-            "premium": "P360.00"
-          }
-        }
-      ]
-    },
-    {
       "title": "Pizza Stacks",
       "products": [
         {
@@ -46,6 +25,27 @@
           "size": {
             "classic": "P139.00",
             "premium": "P159.00"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Boxes of Pizza",
+      "products": [
+        {
+          "name": "Box of 9",
+          "desc": "9 pcs 4 inch sized pizza",
+          "size": {
+            "classic": "P240.00",
+            "premium": "P260.00"
+          }
+        },
+        {
+          "name": "Box of 12",
+          "desc": "12 pcs 4 inch sized pizza",
+          "size": {
+            "classic": "P320.00",
+            "premium": "P360.00"
           }
         }
       ]
