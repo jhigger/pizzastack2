@@ -26,7 +26,7 @@ const images = {
 export default function About() {
 	return (
 		<Flex
-			bg={'gray.700'}
+			bg={'black'}
 			py={{base: 3, md: 24}}
 			px={{base: 0, md: 5}}
 			w="auto"

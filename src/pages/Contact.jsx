@@ -6,9 +6,8 @@ import {
 	SimpleGrid,
 	Icon,
 	Text,
-	Stack,
 	VStack,
-	HStack
+	Flex
 } from '@chakra-ui/react';
 import {FaYoutube} from '@react-icons/all-files/fa/FaYoutube';
 import {FaFacebookSquare} from '@react-icons/all-files/fa/FaFacebookSquare';
@@ -39,7 +38,7 @@ const Map = ({...props}) => {
 		<Box my={4} {...props}>
 			<iframe
 				width="100%"
-				height="400"
+				height="500"
 				frameBorder="0"
 				scrolling="no"
 				marginHeight="0"
@@ -54,59 +53,68 @@ const Map = ({...props}) => {
 
 export default function Contact() {
 	return (
-		<Container
+		<Flex
+			bg={'black'}
 			pt={{base: 12, md: 24}}
-			mx="auto"
-			shadow="xl"
-			maxW="container.xl"
+			w="auto"
+			justifyContent="center"
+			alignItems="center"
 		>
-			<SimpleGrid p={{base: 1, md: 12}} columns={{base: 1, lg: 2}}>
-				<Map display={{base: 'none', lg: 'block'}} />
-				<VStack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
-					<Heading fontSize={{base: '2xl', md: '4xl'}} my={8}>
-						You Can Find Us Here
-					</Heading>
-					<Text
-						color={'gray.400'}
-						fontSize={{base: 'sm', md: 'xl'}}
-						lineHeight="tall"
-						fontWeight="semibold"
-						letterSpacing={{base: 'wider', md: 'widest'}}
-					>
-						<Icon w={6} h={6} as={MdLocationOn} /> 363 Legarda Rd, Baguio City,
-						Benguet
-					</Text>
-					<Text
-						color={'gray.400'}
-						fontSize={{base: 'sm', md: 'xl'}}
-						lineHeight="tall"
-						fontWeight={{base: 'thin', md: 'semibold'}}
-						letterSpacing={{base: 'wider', md: 'widest'}}
-					>
-						<Icon w={6} h={6} as={MdEmail} /> Pizzastack.Franchising@google.com
-					</Text>
-					<Container maxW={'xl'} py={4} justify="center">
-						<SimpleGrid columns={{base: 3}} spacing={12}>
-							{socials.map((social, i) => (
-								<chakra.a
-									fontSize={{base: 'xs', md: 'xl'}}
-									fontWeight="medium"
-									ml="2"
-									href={social.link}
-									target="_blank"
-									key={i}
-								>
-									<VStack align={'center'}>
-										<Icon w={12} h={12} as={social.icon} />
-										<Text fontWeight={400}>{social.title}</Text>
-									</VStack>
-								</chakra.a>
-							))}
-						</SimpleGrid>
-					</Container>
-				</VStack>
-				<Map display={{base: 'block', lg: 'none'}} />
-			</SimpleGrid>
-		</Container>
+			<Container shadow="xl" maxW="container.xl">
+				<SimpleGrid
+					p={{base: 1, md: 6}}
+					columns={{base: 1, lg: 2}}
+					justifyContent="center"
+					alignItems="center"
+				>
+					<Map display={{base: 'none', lg: 'block'}} />
+					<VStack spacing={4} as={Container} maxW={'md'} textAlign={'center'}>
+						<Heading fontSize={{base: '2xl', md: '4xl'}} my={8}>
+							You Can Find Us Here
+						</Heading>
+						<Text
+							color={'gray.400'}
+							fontSize={{base: 'sm', md: 'lg'}}
+							lineHeight="tall"
+							fontWeight="semibold"
+							letterSpacing={{base: 'wider', md: 'widest'}}
+						>
+							<Icon w={6} h={6} as={MdLocationOn} /> 363 Legarda Rd, Baguio
+							City, Benguet
+						</Text>
+						<Text
+							color={'gray.400'}
+							fontSize={{base: 'sm', md: 'lg'}}
+							lineHeight="tall"
+							fontWeight={{base: 'thin', md: 'semibold'}}
+							letterSpacing={{base: 'wider', md: 'widest'}}
+						>
+							<Icon w={6} h={6} as={MdEmail} />{' '}
+							Pizzastack.Franchising@google.com
+						</Text>
+						<Container maxW={'lg'} py={4} justify="center">
+							<SimpleGrid columns={{base: 3}}>
+								{socials.map((social, i) => (
+									<chakra.a
+										fontSize={{base: 'xs', md: 'sm'}}
+										fontWeight="medium"
+										ml="2"
+										href={social.link}
+										target="_blank"
+										key={i}
+									>
+										<VStack align={'center'}>
+											<Icon w={9} h={9} as={social.icon} />
+											<Text fontWeight={400}>{social.title}</Text>
+										</VStack>
+									</chakra.a>
+								))}
+							</SimpleGrid>
+						</Container>
+					</VStack>
+					<Map display={{base: 'block', lg: 'none'}} />
+				</SimpleGrid>
+			</Container>
+		</Flex>
 	);
 }

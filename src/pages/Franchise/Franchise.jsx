@@ -6,7 +6,7 @@ import why from '../../assets/images/why.webp';
 
 export default function Franchise() {
 	return (
-		<Box pt={{base: 12, md: 24}}>
+		<Box py={{base: 12, md: 24}} bg="black">
 			<Container
 				maxW="container.xl"
 				justify="center"
