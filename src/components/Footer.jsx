@@ -28,7 +28,7 @@ export default function LargeWithLogoCentered() {
 					363 Legarda Rd, Baguio City, Benguet
 				</Text>
 				<Text pt={3} fontSize={'xs'} textAlign={'center'}>
-					© 2021 PizzaStack&trade;. All rights reserved
+					© 2022 PizzaStack&trade;. All rights reserved
 				</Text>
 			</Box>
 		</Box>
