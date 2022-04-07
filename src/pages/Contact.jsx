@@ -89,8 +89,7 @@ export default function Contact() {
 							fontWeight={{base: 'thin', md: 'semibold'}}
 							letterSpacing={{base: 'wider', md: 'widest'}}
 						>
-							<Icon w={6} h={6} as={MdEmail} />{' '}
-							Pizzastack.Franchising@google.com
+							<Icon w={6} h={6} as={MdEmail} /> Pizzastack.Franchising@gmail.com
 						</Text>
 						<Container maxW={'lg'} py={4} justify="center">
 							<SimpleGrid columns={{base: 3}}>

@@ -32,33 +32,23 @@ export default function Section2() {
 							letterSpacing="widest"
 							mb="12"
 						>
-							Introducing the FIRST and ONLY Pizza With a Hole, Pizza Stack is
-							Where it's At!!!
+							Introducing the Award Winning Pizza Concept. Pizza Stack is Where
+							it's At!!!
 						</Heading>
 						<Text fontSize={{base: 'lg', lg: 'xl'}} fontWeight="thin">
-							"Have you ever tried eating a whole pizza from a box that you
-							don't have to slice it??? or eating a whole pizza while holding a
-							drink, in one hand and on the go? It's almost impossible, right?!
-							Well, not anymore! That's how the founders of Pizza Stack first
-							thought of their idea. They realised the huge potential of their
-							concept of holding your drink and pizza in one hand while walking.
-							And if you are traveling or driving, it fits in the cup holder of
-							your car, or watch a movie and stand it in the holder of your
-							cinema seat... Pizza Stack is a totally new concept of eating
-							pizza on-the-go, any time, any place, with no mess as pizzas won't
-							stick together when stacked on top of the other. And because it
-							doesn't require a huge packaging, it is also good for both you and
-							to the environment. Realising it's potential, the founders created
-							Pizza Stack with big plans to grow and expand the business from
-							the very start. High quality affordable pizza was very important
-							for success, so they went to Italy to learn from the pizza making
-							masters in La Sorgente in Napoli, Italy and then they created
-							their own unique Pizza Stack recipe. With this attention to detail
-							you really can taste the difference! The unique concept together
-							with the highest quality is why the Pizza Stack franchise is the
-							next big thing to take the Philippines by storm... And it's not
-							stopping there! Plans have already been made to take Pizza Stack
-							International."
+							Ever tried eating a pizza from a box while holding a drink and
+							on-the-go? It's almost impossible! Not anymore! The founders of
+							Pizza Stack realized the huge potential of having an ultimate
+							quality pizza, stacked on a cup, all in one hand. Its unique
+							design means it's on-the-go in so many ways, walking along, in the
+							cup holder of your car or your cinema seat, or even at a concert.
+							It's the perfect meal to have anywhere. The founders traveled to
+							Italy to learn from the pizza making masters in Naples and
+							Sorrento… the birth place of pizza. From this, the founders
+							created Pizza Stack's own unique recipe. The quality and attention
+							to detail means you can really taste the difference! The award
+							winning concept and ultimate quality means that the Pizza Stack
+							Franchise is the next big thing to take the Philippines by storm.
 						</Text>
 					</Box>
 				</SimpleGrid>

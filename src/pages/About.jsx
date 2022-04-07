@@ -36,28 +36,15 @@ export default function About() {
 				<AboutCard
 					mt={8}
 					image={images.card1}
-					title="FILIPINO – BRITISH COUPLE TRAVELED TO NAPLES, ITALY AND MASTERED THE
-					TRADITIONAL WAY OF MAKING A PIZZA"
-					text="
-					Owners Nectar and Ged Scott or The Scotts are travelers and food
-					enthusiasts. Their love for good food inspired their travel to Naples,
-					Italy. Where they mastered the art of pizza making at “La Sorgente” –
-					a Pizza Master Class offered to chefs, restaurant owners and even food
-					enthusiasts. It teaches traditional process of making an Italian pizza
-					dough, mozzarella cheese and olive oil."
+					title="FILIPINO – BRITISH COUPLE TRAVELED TO NAPLES & SORRENTO ITALY, AND MASTERED THE TRADITIONAL WAY OF MAKING A PIZZA"
+					text="Owners Nectar and Ged Scott are both travel and food enthusiasts. Combining their passions, they traveled to Italy to master the art of pizza making at “La Sorgente” – a traditional Italian Pizza Master Class from the birthplace of pizza!"
 				/>
 				<AboutCard
 					mt={8}
 					image={images.card2}
-					title="ELEVATING FILIPINOS' ON -THE-GO PIZZA EXPERIENCE SINCE 2019"
-					text="Pizza Stack brings a whole new level of snacking experience through its mini pizza sitting on top of a cup filled with a cold beverage. Definitely the perfect snack that every family or  ‘barkada’ can truly enjoy wherever they go."
+					title="THE ORIGINAL ON-THE-GO PIZZA EXPERIENCE SINCE 2019"
+					text="Pizza Stack created a new on-the-go experience through its innovative concept and design of pizzas stacked on top of your choice of beverage. Perfect for any occasion, every family or “barkada” can truly enjoy wherever they go."
 					flip
-				/>
-				<AboutCard
-					mt={8}
-					image={images.card3}
-					title="INTERNATIONALIZED IN THE UK"
-					text="The Scotts proudly opened their first British store in Bromborough, United Kingdom. “Pizza snack with a twist” – perfect for the fast-paced lifestyle in UK, tailor fit to the modern market."
 				/>
 				<SimpleGrid columns={{base: 1, md: 2}} spacing={8} mt={6} maxW="max">
 					<AboutAvatar
