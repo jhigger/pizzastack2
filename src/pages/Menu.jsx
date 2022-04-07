@@ -5,7 +5,8 @@ import {
 	SimpleGrid,
 	Flex,
 	Container,
-	useMediaQuery
+	useMediaQuery,
+	Spacer
 } from '@chakra-ui/react';
 import data from '../assets/menu.json';
 
@@ -23,7 +24,12 @@ const MenuItem = ({title, children, length}) => {
 			>
 				{title}
 			</chakra.p>
-			<SimpleGrid columns={{base: 1, md: 2, lg: cols}} spacingY={16} mt={6}>
+			<SimpleGrid
+				columns={{base: 1, md: 2, lg: cols}}
+				spacingY={6}
+				spacingX={2}
+				mt={6}
+			>
 				{children}
 			</SimpleGrid>
 		</Box>
@@ -33,11 +39,11 @@ const MenuItem = ({title, children, length}) => {
 const ProductName = ({name}) => {
 	return (
 		<chakra.h3
-			fontSize="lg"
-			fontWeight="semibold"
-			lineHeight="tall"
+			fontSize={{base: 'xl', md: '3xl'}}
+			fontWeight="extrabold"
+			lineHeight="taller"
 			letterSpacing="wide"
-			color="red"
+			color="gray.800"
 		>
 			{name}
 		</chakra.h3>
@@ -48,10 +54,10 @@ const ProductDesc = ({desc, ...props}) => {
 	return (
 		<chakra.p
 			fontSize="sm"
-			fontWeight="thin"
+			fontWeight="semibold"
 			lineHeight="taller"
-			letterSpacing="wider"
-			color="yellow"
+			letterSpacing="wide"
+			color="gray.800"
 			mb="2"
 			{...props}
 		>
@@ -68,11 +74,10 @@ const ProductPrice = ({text, dots, price}) => {
 
 	return (
 		<chakra.p
-			fontSize="md"
-			fontWeight="light"
+			fontSize={{base: 'md', md: 'lg'}}
+			fontWeight="semibold"
 			lineHeight="taller"
 			letterSpacing="widest"
-			color="white"
 		>
 			{text}
 			{printDots()}
@@ -86,19 +91,25 @@ const PizzaPrices = ({products}) => {
 		<>
 			{products.map((product) => {
 				return (
-					<Box textAlign="center" key={product.name}>
-						<ProductName name={product.name} />
-						<ProductDesc desc={product.desc} />
-						<ProductPrice
-							text={'Classic'}
-							dots={{base: 20, md: 40}}
-							price={product.size.classic}
-						/>
-						<ProductPrice
-							text="Premium"
-							dots={{base: 17, md: 37}}
-							price={product.size.premium}
-						/>
+					<Box key={product.name}>
+						<YellowBox>
+							<Box p={2}>
+								<ProductName name={product.name} />
+								<ProductDesc desc={product.desc} />
+							</Box>
+							<PriceBox>
+								<ProductPrice
+									text={'CLASSIC'}
+									dots={{base: 15, md: 15}}
+									price={product.size.classic}
+								/>
+								<ProductPrice
+									text="PREMIUM"
+									dots={{base: 12, md: 12}}
+									price={product.size.premium}
+								/>
+							</PriceBox>
+						</YellowBox>
 					</Box>
 				);
 			})}
@@ -111,9 +122,13 @@ const Specialties = ({products}) => {
 		<>
 			{products.map((product) => {
 				return (
-					<Box textAlign="center" key={product.name}>
-						<ProductName name={product.name} />
-						<ProductDesc desc={product.desc} />
+					<Box key={product.name}>
+						<YellowBox>
+							<Box p={2}>
+								<ProductName name={product.name} />
+								<ProductDesc desc={product.desc} />
+							</Box>
+						</YellowBox>
 					</Box>
 				);
 			})}
@@ -126,27 +141,64 @@ const Others = ({products}) => {
 		<>
 			{products.map((product) => {
 				return (
-					<Box textAlign="center" key={product.name}>
-						<ProductName name={product.name} />
-						<Flex align="center" justify="center">
-							<ProductDesc desc={product.desc} w={'xs'} />
-						</Flex>
-						<ProductPrice
-							text={'Regular'}
-							dots={{base: 20, md: 40}}
-							price={product.size.regular}
-						/>
-						{product.size.large && (
-							<ProductPrice
-								text="Large"
-								dots={{base: 23, md: 43}}
-								price={product.size.large}
-							/>
-						)}
+					<Box key={product.name}>
+						<YellowBox>
+							<Box p={2}>
+								<ProductName name={product.name} />
+								<Flex align="center" justify="center">
+									<ProductDesc desc={product.desc} w={'xs'} />
+								</Flex>
+							</Box>
+							<Spacer />
+							<PriceBox>
+								<ProductPrice
+									text={'Regular'}
+									dots={{base: 15, md: 15}}
+									price={product.size.regular}
+								/>
+								{product.size.large && (
+									<ProductPrice
+										text="Large"
+										dots={{base: 19, md: 19}}
+										price={product.size.large}
+									/>
+								)}
+							</PriceBox>
+						</YellowBox>
 					</Box>
 				);
 			})}
 		</>
+	);
+};
+
+const YellowBox = ({children}) => {
+	return (
+		<Flex
+			bg="yellow.300"
+			rounded={'3xl'}
+			textColor={'gray.800'}
+			p={1}
+			maxW="sm"
+			minH="full"
+			flexDir="column"
+		>
+			{children}
+		</Flex>
+	);
+};
+
+const PriceBox = ({children}) => {
+	return (
+		<Box
+			bg={'red.600'}
+			borderBottomLeftRadius={'3xl'}
+			borderBottomRightRadius={'3xl'}
+			textColor={'white'}
+			p={6}
+		>
+			{children}
+		</Box>
 	);
 };
 
