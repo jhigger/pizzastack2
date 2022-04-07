@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import {Switch, Route, useLocation} from 'react-router-dom';
 import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Menu from './pages/Menu';
 import About from './pages/About';
 import Contact from './pages/Contact';
