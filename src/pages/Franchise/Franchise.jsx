@@ -11,6 +11,7 @@ export default function Franchise() {
 				justify="center"
 				align="center"
 				p={{base: 1, md: 12}}
+				mb={8}
 			>
 				<Image
 					loading="eager"
@@ -19,6 +20,7 @@ export default function Franchise() {
 					justifySelf="center"
 					src={why}
 					alt="why"
+					w="full"
 				/>
 			</Container>
 			<Form />
