@@ -9,6 +9,7 @@ import {
 	Spacer
 } from '@chakra-ui/react';
 import data from '../assets/menu.json';
+import pattern from '../assets/images/pattern.jpg';
 
 const MenuItem = ({title, children, length}) => {
 	const cols = length % 2 == 0 ? 2 : 3;
@@ -21,6 +22,8 @@ const MenuItem = ({title, children, length}) => {
 				lineHeight="taller"
 				fontWeight="bold"
 				letterSpacing="wider"
+				bg="blackAlpha.900"
+				rounded="full"
 			>
 				{title}
 			</chakra.p>
@@ -205,21 +208,15 @@ const PriceBox = ({children}) => {
 export default function Menu() {
 	return (
 		<Flex
-			bg={'black'}
+			backgroundImage={pattern}
 			py={{base: 1, md: 24}}
 			px={{base: 1, md: 5}}
 			w="auto"
 			justifyContent="center"
 			alignItems="center"
+			flexDir="column"
 		>
-			<Container
-				px={8}
-				py={4}
-				mx="auto"
-				bg={'gray.800'}
-				shadow="xl"
-				maxW="container.xl"
-			>
+			<Container px={8} py={4} mx="auto" maxW="container.xl">
 				{data.menu.map((item, i) => {
 					if (i == 0 || i == 1)
 						return (
@@ -264,6 +261,14 @@ export default function Menu() {
 						);
 				})}
 			</Container>
+			<Box alignSelf="end" fontSize="xs" mb={-50} textColor="blackAlpha.900">
+				<a
+					href="https://www.vecteezy.com/free-vector/pizza-pattern"
+					target="_blank"
+				>
+					Pizza Pattern Vectors by Vecteezy
+				</a>
+			</Box>
 		</Flex>
 	);
 }
