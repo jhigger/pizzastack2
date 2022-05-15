@@ -1,4 +1,5 @@
 import {chakra, Box, SimpleGrid} from '@chakra-ui/react';
+import {cloneElement} from 'react';
 
 const MenuItem = ({title, children, length}) => {
 	const cols = length % 2 == 0 ? 2 : 3;
@@ -22,7 +23,7 @@ const MenuItem = ({title, children, length}) => {
 				spacingX={2}
 				mt={6}
 			>
-				{children}
+				{cloneElement(children, {title})}
 			</SimpleGrid>
 		</Box>
 	);

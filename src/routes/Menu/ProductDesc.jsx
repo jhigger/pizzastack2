@@ -1,18 +1,21 @@
-import {chakra} from '@chakra-ui/react';
+import {chakra, Flex} from '@chakra-ui/react';
 
 const ProductDesc = ({desc, ...props}) => {
 	return (
-		<chakra.p
-			fontSize="sm"
-			fontWeight="semibold"
-			lineHeight="taller"
-			letterSpacing="wide"
-			color="gray.800"
-			mb="2"
-			{...props}
-		>
-			{desc}
-		</chakra.p>
+		<Flex align="center" justify="center">
+			<chakra.p
+				fontSize="sm"
+				fontWeight="semibold"
+				lineHeight="taller"
+				letterSpacing="normal"
+				color="gray.800"
+				mb={2}
+				w="2xs"
+				{...props}
+			>
+				{desc}
+			</chakra.p>
+		</Flex>
 	);
 };
 

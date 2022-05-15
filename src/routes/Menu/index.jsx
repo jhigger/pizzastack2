@@ -9,7 +9,7 @@ import ProductPrice from './ProductPrice';
 import YellowBox from './YellowBox';
 import PriceBox from './PriceBox';
 
-const PizzaPrices = ({products}) => {
+const ItemPrices = ({products, title}) => {
 	return (
 		<>
 			{products.map((product) => {
@@ -20,13 +20,14 @@ const PizzaPrices = ({products}) => {
 								<ProductName name={product.name} />
 								<ProductDesc desc={product.desc} />
 							</Box>
+							<Spacer />
 							<PriceBox>
 								{Object.keys(product.size).map((key) => {
-									const dots = 20 - key.length;
+									const dots = key.length;
 									return (
 										<ProductPrice
 											key={key}
-											text={key.toUpperCase()}
+											text={title == 'Drinks' ? key : key.toUpperCase()}
 											dots={{base: dots, md: dots}}
 											price={product.size[key]}
 										/>
@@ -60,45 +61,6 @@ const Specialties = ({products}) => {
 	);
 };
 
-const Others = ({products}) => {
-	const capitalizeFirstLetter = (string) => {
-		return string.charAt(0).toUpperCase() + string.slice(1);
-	};
-
-	return (
-		<>
-			{products.map((product) => {
-				return (
-					<Box key={product.name}>
-						<YellowBox>
-							<Box p={2}>
-								<ProductName name={product.name} />
-								<Flex align="center" justify="center">
-									<ProductDesc desc={product.desc} w={'xs'} />
-								</Flex>
-							</Box>
-							<Spacer />
-							<PriceBox>
-								{Object.keys(product.size).map((key) => {
-									const dots = 20 - key.length;
-									return (
-										<ProductPrice
-											key={key}
-											text={capitalizeFirstLetter(key)}
-											dots={{base: dots, md: dots}}
-											price={product.size[key]}
-										/>
-									);
-								})}
-							</PriceBox>
-						</YellowBox>
-					</Box>
-				);
-			})}
-		</>
-	);
-};
-
 export default function Menu() {
 	return (
 		<Flex
@@ -119,7 +81,7 @@ export default function Menu() {
 								key={i}
 								length={item.products.length}
 							>
-								<PizzaPrices products={item.products} />
+								<ItemPrices products={item.products} />
 							</MenuItem>
 						);
 					if (i == 2)
@@ -137,13 +99,13 @@ export default function Menu() {
 					if (i == 3)
 						return (
 							<MenuItem title={'Others'} key={i} length={item.products.length}>
-								<Others products={item.products} />
+								<ItemPrices products={item.products} />
 							</MenuItem>
 						);
 					if (i == 4)
 						return (
 							<MenuItem title={'Drinks'} key={i} length={item.drinks.length}>
-								<Others products={item.drinks} />
+								<ItemPrices products={item.drinks} />
 							</MenuItem>
 						);
 				})}

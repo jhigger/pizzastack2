@@ -7,7 +7,7 @@ const YellowBox = ({children}) => {
 			rounded={'3xl'}
 			textColor={'gray.800'}
 			p={1}
-			maxW="sm"
+			maxW="xs"
 			minH="full"
 			flexDir="column"
 		>

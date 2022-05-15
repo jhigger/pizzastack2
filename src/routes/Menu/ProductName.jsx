@@ -3,10 +3,10 @@ import {chakra} from '@chakra-ui/react';
 const ProductName = ({name}) => {
 	return (
 		<chakra.h3
-			fontSize={{base: 'xl', md: '3xl'}}
+			fontSize={{base: 'xl', md: '2xl'}}
 			fontWeight="extrabold"
 			lineHeight="taller"
-			letterSpacing="wide"
+			letterSpacing="widest"
 			color="gray.800"
 		>
 			{name}
