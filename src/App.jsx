@@ -1,4 +1,3 @@
-import React, {useRef} from 'react';
 import {Switch, Route, useLocation} from 'react-router-dom';
 import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer';
@@ -9,7 +8,6 @@ import Contact from './pages/Contact';
 import Franchise from './pages/Franchise/Franchise';
 import NotFound from './pages/NotFound';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
-import './App.css';
 
 function App() {
 	let location = useLocation();
