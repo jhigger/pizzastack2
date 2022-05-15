@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Flex, Container, Spacer} from '@chakra-ui/react';
 import data from '../../assets/menu.json';
 import pattern from '../../assets/images/pattern.jpg';
-import MenuItem from './MenuItem';
+import MenuRow from '../MenuRow
 import ProductName from './ProductName';
 import ProductDesc from './ProductDesc';
 import ProductPrice from './ProductPrice';
@@ -76,37 +76,33 @@ export default function Menu() {
 				{data.menu.map((item, i) => {
 					if (i == 0 || i == 1)
 						return (
-							<MenuItem
-								title={item.title}
-								key={i}
-								length={item.products.length}
-							>
+							<MenuRow title={item.title} key={i} length={item.products.length}>
 								<ItemPrices products={item.products} />
-							</MenuItem>
+							</MenuRow>
 						);
 					if (i == 2)
 						return (
 							<Box key={i}>
 								{item.specialties.map((specialty, i) => {
 									return (
-										<MenuItem title={specialty.title} key={i}>
+										<MenuRow title={specialty.title} key={i}>
 											<Specialties products={specialty.products} />
-										</MenuItem>
+										</MenuRow>
 									);
 								})}
 							</Box>
 						);
 					if (i == 3)
 						return (
-							<MenuItem title={'Others'} key={i} length={item.products.length}>
+							<MenuRow title={'Others'} key={i} length={item.products.length}>
 								<ItemPrices products={item.products} />
-							</MenuItem>
+							</MenuRow>
 						);
 					if (i == 4)
 						return (
-							<MenuItem title={'Drinks'} key={i} length={item.drinks.length}>
+							<MenuRow title={'Drinks'} key={i} length={item.drinks.length}>
 								<ItemPrices products={item.drinks} />
-							</MenuItem>
+							</MenuRow>
 						);
 				})}
 			</Container>
