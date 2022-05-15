@@ -1,3 +1,4 @@
+import {createContext} from 'react';
 import {Switch, Route, useLocation} from 'react-router-dom';
 import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer';
@@ -14,7 +15,7 @@ function App() {
 
 	return (
 		<>
-			<Navbar />
+			<Navbar path={location.pathname} />
 			<TransitionGroup>
 				<CSSTransition key={location.pathname} classNames="fade" timeout={500}>
 					<Switch location={location}>
