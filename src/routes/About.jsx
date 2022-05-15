@@ -9,7 +9,6 @@ import {
 } from '@chakra-ui/react';
 import italy from '../assets/images/italy.webp';
 import pizza_drink from '../assets/images/pizza_drink.webp';
-import uk from '../assets/images/uk.webp';
 import nectar from '../assets/images/nectar.webp';
 import ged from '../assets/images/ged.webp';
 
@@ -19,7 +18,6 @@ const images = {
 
 	card1: italy,
 	card2: pizza_drink,
-	card3: uk
 };
 
 export default function About() {
