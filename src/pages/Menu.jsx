@@ -101,16 +101,17 @@ const PizzaPrices = ({products}) => {
 								<ProductDesc desc={product.desc} />
 							</Box>
 							<PriceBox>
-								<ProductPrice
-									text={'CLASSIC'}
-									dots={{base: 15, md: 15}}
-									price={product.size.classic}
-								/>
-								<ProductPrice
-									text="PREMIUM"
-									dots={{base: 12, md: 12}}
-									price={product.size.premium}
-								/>
+								{Object.keys(product.size).map((key) => {
+									const dots = 20 - key.length;
+									return (
+										<ProductPrice
+											key={key}
+											text={key.toUpperCase()}
+											dots={{base: dots, md: dots}}
+											price={product.size[key]}
+										/>
+									);
+								})}
 							</PriceBox>
 						</YellowBox>
 					</Box>
