@@ -99,32 +99,11 @@
     {
       "products": [
         {
-          "name": "PizzSarap",
-          "desc": "Slices of ham & cheese wrapped in loaf bread, rolled in bread crumbs and deep fried.",
-          "size": {
-            "regular": "P50.00"
-          }
-        },
-        {
           "name": "Cajun Fries",
           "desc": "Deep fried string potatoes seasoned with cajun powder.(slightly spicy)",
           "size": {
             "regular": "P40.00",
             "large": "P60.00"
-          }
-        },
-        {
-          "name": "Panini Style Sandwich",
-          "desc": "Three layered loaf bread filled with your choice of tuna & cheese or ham & cheese.",
-          "size": {
-            "regular": "P69.00"
-          }
-        },
-        {
-          "name": "Burger Beed Slaw",
-          "desc": "Pan-grilled premium ground beef with special sauce, cheese and coleslaw in a sesame bun.",
-          "size": {
-            "regular": "P109.00"
           }
         },
         {
@@ -137,80 +116,33 @@
       ]
     },
     {
-      "title": "Budget Meal",
-      "products": [
+      "drinks": [
         {
-          "name": "BM1",
-          "desc": "1 pc Margherita Pizza w/ Cajun Fries.",
+          "name": "Cucumber Lemonade",
           "size": {
-            "regular": "P89.00"
+            "12oz": "P40.00",
+            "16oz": "P50.00"
           }
         },
         {
-          "name": "BM2",
-          "desc": "2 pcs Margheritta Pizza w/ Drinks.",
+          "name": "Blue Lemonade",
           "size": {
-            "regular": "P89.00"
+            "12oz": "P40.00",
+            "16oz": "P50.00"
           }
         },
         {
-          "name": "BM3",
-          "desc": "3 pcs Margerita Pizza.",
+          "name": "Pink Lemonade",
           "size": {
-            "regular": "P89.00"
-          }
-        }
-      ]
-    },
-    {
-      "products": [
-        {
-          "name": "Chicken Burger Slaw",
-          "desc": "Gourmet chicken burger with cheese, coleslaw & pizza stack's special sauce.",
-          "size": {
-            "regular": "P90.00"
+            "12oz": "P40.00",
+            "16oz": "P50.00"
           }
         },
         {
-          "name": "CB1",
-          "desc": "Chicken burger slaw with drinks.",
+          "name": "Iced Tea",
           "size": {
-            "regular": "P129.00"
-          }
-        },
-        {
-          "name": "CB2",
-          "desc": "Chicken burger slaw with fries.",
-          "size": {
-            "regular": "P129.00"
-          }
-        },
-        {
-          "name": "CB3",
-          "desc": "Chicken burger slaw with drinks & fries.",
-          "size": {
-            "regular": "P159.00"
-          }
-        },
-        {
-          "name": "Nuggets",
-          "desc": "6 pcs nuggets.",
-          "size": {
-            "regular": "P109.00"
-          }
-        },
-        {
-          "name": "N1",
-          "desc": "3 pcs nuggets with fries.",
-          "size": {
-            "regular": "P99.00"
-          }
-        },
-        {
-          "name": "N2",
-          "desc": "6 pcs nuggets with fries.",
-          "size": {
-            "regular": "P139.00"
+            "12oz": "P40.00",
+            "16oz": "P50.00"
           }
         }
       ]

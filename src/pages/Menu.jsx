@@ -140,6 +140,10 @@ const Specialties = ({products}) => {
 };
 
 const Others = ({products}) => {
+	const capitalizeFirstLetter = (string) => {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	};
+
 	return (
 		<>
 			{products.map((product) => {
@@ -154,18 +158,17 @@ const Others = ({products}) => {
 							</Box>
 							<Spacer />
 							<PriceBox>
-								<ProductPrice
-									text={'Regular'}
-									dots={{base: 15, md: 15}}
-									price={product.size.regular}
-								/>
-								{product.size.large && (
-									<ProductPrice
-										text="Large"
-										dots={{base: 19, md: 19}}
-										price={product.size.large}
-									/>
-								)}
+								{Object.keys(product.size).map((key) => {
+									const dots = 20 - key.length;
+									return (
+										<ProductPrice
+											key={key}
+											text={capitalizeFirstLetter(key)}
+											dots={{base: dots, md: dots}}
+											price={product.size[key]}
+										/>
+									);
+								})}
 							</PriceBox>
 						</YellowBox>
 					</Box>
@@ -242,26 +245,19 @@ export default function Menu() {
 						);
 					if (i == 3)
 						return (
-							<MenuItem title={'Others'} key={i}>
+							<MenuItem title={'Others'} key={i} length={item.products.length}>
 								<Others products={item.products} />
 							</MenuItem>
 						);
-
 					if (i == 4)
 						return (
-							<MenuItem title={item.title} key={i}>
-								<Others products={item.products} />
-							</MenuItem>
-						);
-					if (i == 5)
-						return (
-							<MenuItem title={'Others'} key={i}>
-								<Others products={item.products} />
+							<MenuItem title={'Drinks'} key={i} length={item.drinks.length}>
+								<Others products={item.drinks} />
 							</MenuItem>
 						);
 				})}
 			</Container>
-			<Box alignSelf="end" fontSize="xs" mb={-50} textColor="blackAlpha.900">
+			<Box alignSelf="center" fontSize="xs" mb={-20} textColor="blackAlpha.900">
 				<a
 					href="https://www.vecteezy.com/free-vector/pizza-pattern"
 					target="_blank"
