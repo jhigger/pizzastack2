@@ -1,14 +1,13 @@
-import {createContext} from 'react';
 import {Switch, Route, useLocation} from 'react-router-dom';
+import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import Navbar from './components/Header/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home/Home';
-import Menu from './pages/Menu';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Franchise from './pages/Franchise/Franchise';
-import NotFound from './pages/NotFound';
-import {TransitionGroup, CSSTransition} from 'react-transition-group';
+import Home from './routes/Home';
+import Menu from './routes/Menu';
+import About from './routes/About';
+import Contact from './routes/Contact';
+import Franchise from './routes/Franchise';
+import NotFound from './routes/NotFound';
 
 function App() {
 	let location = useLocation();

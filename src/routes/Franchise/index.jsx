@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './Form/Form';
+import Form from './Form';
 import {Box, Container, Image} from '@chakra-ui/react';
 import why from '../../assets/images/why.webp';
 

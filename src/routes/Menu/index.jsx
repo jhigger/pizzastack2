@@ -1,93 +1,13 @@
 import React from 'react';
-import {
-	chakra,
-	Box,
-	SimpleGrid,
-	Flex,
-	Container,
-	useMediaQuery,
-	Spacer
-} from '@chakra-ui/react';
-import data from '../assets/menu.json';
-import pattern from '../assets/images/pattern.jpg';
-
-const MenuItem = ({title, children, length}) => {
-	const cols = length % 2 == 0 ? 2 : 3;
-	return (
-		<Box align="center" mb={12}>
-			<chakra.p
-				mb={12}
-				mt={24}
-				fontSize={{base: '2xl', sm: '3xl'}}
-				lineHeight="taller"
-				fontWeight="bold"
-				letterSpacing="wider"
-				bg="blackAlpha.900"
-				rounded="full"
-			>
-				{title}
-			</chakra.p>
-			<SimpleGrid
-				columns={{base: 1, md: 2, lg: cols}}
-				spacingY={6}
-				spacingX={2}
-				mt={6}
-			>
-				{children}
-			</SimpleGrid>
-		</Box>
-	);
-};
-
-const ProductName = ({name}) => {
-	return (
-		<chakra.h3
-			fontSize={{base: 'xl', md: '3xl'}}
-			fontWeight="extrabold"
-			lineHeight="taller"
-			letterSpacing="wide"
-			color="gray.800"
-		>
-			{name}
-		</chakra.h3>
-	);
-};
-
-const ProductDesc = ({desc, ...props}) => {
-	return (
-		<chakra.p
-			fontSize="sm"
-			fontWeight="semibold"
-			lineHeight="taller"
-			letterSpacing="wide"
-			color="gray.800"
-			mb="2"
-			{...props}
-		>
-			{desc}
-		</chakra.p>
-	);
-};
-
-const ProductPrice = ({text, dots, price}) => {
-	const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
-	const printDots = () => {
-		return '.'.repeat(isLargerThan800 ? dots.md : dots.base - price.length);
-	};
-
-	return (
-		<chakra.p
-			fontSize={{base: 'md', md: 'lg'}}
-			fontWeight="semibold"
-			lineHeight="taller"
-			letterSpacing="widest"
-		>
-			{text}
-			{printDots()}
-			{price}
-		</chakra.p>
-	);
-};
+import {Box, Flex, Container, Spacer} from '@chakra-ui/react';
+import data from '../../assets/menu.json';
+import pattern from '../../assets/images/pattern.jpg';
+import MenuItem from './MenuItem';
+import ProductName from './ProductName';
+import ProductDesc from './ProductDesc';
+import ProductPrice from './ProductPrice';
+import YellowBox from './YellowBox';
+import PriceBox from './PriceBox';
 
 const PizzaPrices = ({products}) => {
 	return (
@@ -176,36 +96,6 @@ const Others = ({products}) => {
 				);
 			})}
 		</>
-	);
-};
-
-const YellowBox = ({children}) => {
-	return (
-		<Flex
-			bg="yellow.300"
-			rounded={'3xl'}
-			textColor={'gray.800'}
-			p={1}
-			maxW="sm"
-			minH="full"
-			flexDir="column"
-		>
-			{children}
-		</Flex>
-	);
-};
-
-const PriceBox = ({children}) => {
-	return (
-		<Box
-			bg={'red.600'}
-			borderBottomLeftRadius={'3xl'}
-			borderBottomRightRadius={'3xl'}
-			textColor={'white'}
-			p={6}
-		>
-			{children}
-		</Box>
 	);
 };
 
