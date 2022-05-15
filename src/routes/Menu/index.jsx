@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Flex, Container, Spacer} from '@chakra-ui/react';
 import data from '../../assets/menu.json';
 import pattern from '../../assets/images/pattern.jpg';
-import MenuRow from '../MenuRow
+import MenuRow from './MenuRow';
 import ProductName from './ProductName';
 import ProductDesc from './ProductDesc';
 import ProductPrice from './ProductPrice';
