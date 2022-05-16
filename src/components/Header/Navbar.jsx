@@ -46,7 +46,7 @@ const NavLink = ({to, text}) => {
 const Links = () => {
 	return (
 		<>
-			<NavLink to="/" text="Home" />
+			<NavLink to="/home" text="Home" />
 			<NavLink to="/menu" text="Menu" />
 			<NavLink to="/about" text="About" />
 			<NavLink to="/contact" text="Contact" />
