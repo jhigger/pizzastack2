@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import {Box, Flex, Container, Spacer} from '@chakra-ui/react';
 import data from '../../assets/menu.json';
 import pattern from '../../assets/images/pattern.webp';
