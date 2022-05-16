@@ -14,7 +14,7 @@ export default function Hero() {
 				top="0"
 				w="full"
 				h="full"
-				bg="blackAlpha.400"
+				bgGradient="linear(to-b, blackAlpha.400, blackAlpha.400, black)"
 				color="white"
 				justify="center"
 				align="start"
