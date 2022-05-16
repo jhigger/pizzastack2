@@ -65,7 +65,7 @@ export default function Menu() {
 	return (
 		<Flex
 			backgroundImage={pattern}
-			py={{base: 1, md: 24}}
+			py={{base: 1, md: 14}}
 			px={{base: 1, md: 5}}
 			w="auto"
 			justifyContent="center"
@@ -106,7 +106,7 @@ export default function Menu() {
 						);
 				})}
 			</Container>
-			<Box alignSelf="center" fontSize="xs" mb={-20} textColor="blackAlpha.900">
+			<Box alignSelf="center" fontSize="xs" mb={-20}>
 				<a
 					href="https://www.vecteezy.com/free-vector/pizza-pattern"
 					target="_blank"
