@@ -37,7 +37,8 @@ export default function Hero() {
 							fontSize={{base: '2xl', md: '5xl'}}
 							fontWeight="medium"
 							casing="uppercase"
-							color="yellow"
+							bgGradient="linear(to-b, yellow.200, yellow)"
+							bgClip="text"
 						>
 							It's where it's at
 						</Text>
@@ -45,7 +46,7 @@ export default function Hero() {
 					</VStack>
 					<Link to="/franchise">
 						<Button
-							bg="red"
+							bgGradient="linear(to-b, red.200, red)"
 							mt={{base: '1', md: '3'}}
 							boxSize="min"
 							borderRightRadius="full"
