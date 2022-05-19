@@ -7,25 +7,25 @@
           "name": "Pizza Stack",
           "desc": "3 pcs of 4 inches pizza on a cup of 12 oz",
           "size": {
-            "classic": "P119.00",
-            "premium": "P139.00"
-          }
+            "price": "P122.00"
+          },
+          "image": "pizzastack.webp"
         },
         {
           "name": "Super Stack",
           "desc": "4 pcs of 4 inches pizza on a cup of 12 oz",
           "size": {
-            "classic": "P129.00",
-            "premium": "P149.00"
-          }
+            "price": "P152.00"
+          },
+          "image": "superstack.webp"
         },
         {
           "name": "Mega Stack",
           "desc": "5 pcs of 4 inches pizza on a cup of 12 oz",
           "size": {
-            "classic": "P139.00",
-            "premium": "P159.00"
-          }
+            "price": "P182.00"
+          },
+          "image": "megastack.webp"
         }
       ]
     },
@@ -36,17 +36,17 @@
           "name": "Box of 9",
           "desc": "9 pcs 4 inch sized pizza",
           "size": {
-            "classic": "P240.00",
-            "premium": "P260.00"
-          }
+            "price": "P389.00"
+          },
+          "image": "box_of_9.webp"
         },
         {
           "name": "Box of 12",
           "desc": "12 pcs 4 inch sized pizza",
           "size": {
-            "classic": "P320.00",
-            "premium": "P360.00"
-          }
+            "price": "P499.00"
+          },
+          "image": "box_of_12.webp"
         }
       ]
     },
@@ -104,14 +104,26 @@
           "size": {
             "regular": "P40.00",
             "large": "P60.00"
-          }
+          },
+          "image": "cajun_fries.webp"
         },
         {
           "name": "Mozz'ube'lla",
           "desc": "Our very own 3 in 1 pizza loaded with ube jam and mozzarella cheese.",
           "size": {
             "regular": "P110.00"
-          }
+          },
+          "image": "mozubella.webp"
+        },
+        {
+          "name": "Stack Attack",
+          "desc": "20 pcs of pizza.",
+          "size": {
+            "regular": "P739.00",
+            "+1 pizza": "P30.00",
+            "+take out": "P80.00"
+          },
+          "image": ""
         }
       ]
     },

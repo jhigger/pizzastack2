@@ -16,7 +16,7 @@ const ProductPrice = ({text, dots, price}) => {
 			letterSpacing="widest"
 		>
 			{text}
-			{printDots()}
+			{dots && printDots()}
 			{price}
 		</chakra.p>
 	);

@@ -1,4 +1,4 @@
-import {Box, Flex, Container, Spacer} from '@chakra-ui/react';
+import {Box, Flex, Container, Spacer, Image} from '@chakra-ui/react';
 import data from '../../assets/menu.json';
 import pattern from '../../assets/images/pattern.webp';
 import MenuRow from './MenuRow';
@@ -7,6 +7,7 @@ import ProductDesc from './ProductDesc';
 import ProductPrice from './ProductPrice';
 import YellowBox from './YellowBox';
 import PriceBox from './PriceBox';
+import ProductImage from './ProductImage';
 import PageTransition from '../../components/PageTransition';
 import {motion} from 'framer-motion';
 
@@ -20,7 +21,7 @@ const AnimatedBox = ({children, index, ...props}) => {
 			transition={{duration: index}}
 			variants={{
 				visible: {opacity: 1, y: '0%'},
-				hidden: {opacity: 0, y: `${50 + index * 50}%`}
+				hidden: {opacity: 0, y: `${25 + index * 25}%`}
 			}}
 			{...props}
 		>
@@ -29,10 +30,14 @@ const AnimatedBox = ({children, index, ...props}) => {
 	);
 };
 
-const ItemPrices = ({products, title}) => {
+const ItemPrices = ({products, toUpper = true}) => {
 	return (
 		<>
 			{products.map((product, index) => {
+				const image = new URL(
+					`../../assets/images/${product.image}`,
+					import.meta.url
+				).href;
 				return (
 					<AnimatedBox key={product.name} index={index}>
 						<YellowBox>
@@ -40,15 +45,14 @@ const ItemPrices = ({products, title}) => {
 								<ProductName name={product.name} />
 								<ProductDesc desc={product.desc} />
 							</Box>
-							<Spacer />
+							{product.image && <ProductImage src={image} alt={product.name} />}
 							<PriceBox>
 								{Object.keys(product.size).map((key) => {
-									const dots = key.length;
 									return (
 										<ProductPrice
 											key={key}
-											text={title == 'Drinks' ? key : key.toUpperCase()}
-											dots={{base: dots, md: dots}}
+											text={toUpper ? key.toUpperCase() : key}
+											dots={{base: key.length, md: key.length}}
 											price={product.size[key]}
 										/>
 									);
@@ -125,12 +129,12 @@ export default function Menu() {
 						if (i == 4)
 							return (
 								<MenuRow title={'Drinks'} key={i} length={item.drinks.length}>
-									<ItemPrices products={item.drinks} />
+									<ItemPrices products={item.drinks} toUpper={false} />
 								</MenuRow>
 							);
 					})}
 				</Container>
-				<Box alignSelf="center" fontSize="xs" mb={-12}>
+				<Box alignSelf="center" fontSize="xs" mb={-10}>
 					<a
 						href="https://www.vecteezy.com/free-vector/pizza-pattern"
 						target="_blank"

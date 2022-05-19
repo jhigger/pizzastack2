@@ -8,7 +8,7 @@ const YellowBox = ({children}) => {
 			textColor={'gray.800'}
 			p={1}
 			maxW="xs"
-			minH="full"
+			minH="max"
 			flexDir="column"
 		>
 			{children}
