@@ -34,10 +34,6 @@ const ItemPrices = ({products, toUpper = true}) => {
 	return (
 		<>
 			{products.map((product, index) => {
-				const image = new URL(
-					`../../assets/images/${product.image}`,
-					import.meta.url
-				).href;
 				return (
 					<AnimatedBox key={product.name} index={index}>
 						<YellowBox>
@@ -45,7 +41,9 @@ const ItemPrices = ({products, toUpper = true}) => {
 								<ProductName name={product.name} />
 								<ProductDesc desc={product.desc} />
 							</Box>
-							{product.image && <ProductImage src={image} alt={product.name} />}
+							{product.image && (
+								<ProductImage image={product.image} alt={product.name} />
+							)}
 							<PriceBox>
 								{Object.keys(product.size).map((key) => {
 									return (
