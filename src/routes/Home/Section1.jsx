@@ -11,24 +11,24 @@ import pizzastack from '../../assets/images/pizzastack.webp';
 
 export default function Section1() {
 	return (
-		<Box bg="black" color="white" w="full" h="min" position="relative">
+		<Box bg="black">
 			<Container
 				maxW="container.xl"
 				justify="center"
 				align="center"
 				p={{base: 1, md: 12}}
 			>
-				<SimpleGrid columns={{base: 1, lg: 2}} spacing="1">
-					<Box alignSelf="center" m="10">
+				<SimpleGrid columns={{base: 1, lg: 2}} spacing={2}>
+					<Box alignSelf="center" m={12}>
 						<Heading
 							fontSize={{base: 'xl', lg: '3xl'}}
 							fontWeight="bold"
-							letterSpacing="widest"
-							mb="12"
+							letterSpacing="wider"
+							mb={8}
 						>
 							IT'S NEW, IT'S UNIQUE and most of all, IT'S DELICIOUS
 						</Heading>
-						<Text fontSize={{base: 'lg', lg: 'xl'}} fontWeight="thin">
+						<Text fontSize={{base: 'lg', lg: '2xl'}} fontWeight="thin">
 							Here's the NEW concept of Pizza Design with less packaging so it
 							is more environmentally friendly. With the stacked pizzas
 							separated by edible rice paper, eating pizza “On the Go” has never

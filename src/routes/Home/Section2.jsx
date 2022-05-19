@@ -15,26 +15,27 @@ import slide3 from '../../assets/images/slide3.webp';
 
 export default function Section2() {
 	return (
-		<Box bg="black" color="white" w="full" h="min">
+		<Box bg="blackAlpha.600">
 			<Container
 				maxW="container.xl"
 				justify="center"
 				align="center"
 				p={{base: 1, md: 12}}
 			>
-				<SimpleGrid columns={{base: 1, lg: 2}} spacing="1">
+				<SimpleGrid columns={{base: 1, lg: 2}} spacing={2}>
 					<Carousel />
-					<Box alignSelf="center" m="10">
+					<Box alignSelf="center" m={12}>
 						<Heading
 							fontSize={{base: 'xl', lg: '3xl'}}
 							fontWeight="bold"
-							letterSpacing="widest"
-							mb="12"
+							letterSpacing="wider"
+							mb={8}
 						>
-							Introducing the Award Winning Pizza Concept. Pizza Stack is Where
-							it's At!!!
+							Introducing the Award Winning Pizza Concept.
+							<br />
+							Pizza Stack is Where it's At!!!
 						</Heading>
-						<Text fontSize={{base: 'lg', lg: 'xl'}} fontWeight="thin">
+						<Text fontSize={{base: 'lg', lg: '2xl'}} fontWeight="thin">
 							Ever tried eating a pizza from a box while holding a drink and
 							on-the-go? It's almost impossible! Not anymore! The founders of
 							Pizza Stack realized the huge potential of having an ultimate
@@ -127,7 +128,14 @@ const Carousel = () => {
 			alignItems="center"
 			justifyContent="center"
 		>
-			<Flex w="full" pos="relative" overflow="hidden" borderRadius="xl">
+			<Flex
+				w="full"
+				pos="relative"
+				overflow="hidden"
+				borderRadius="xl"
+				border="1px"
+				borderColor="whiteAlpha.500"
+			>
 				<Flex w="full" {...carouselStyle}>
 					{slides.map((slide, sid) => {
 						return (
