@@ -1,6 +1,6 @@
 import {Image} from '@chakra-ui/react';
 
-const ProductImage = ({image, alt}) => {
+const ProductImage = ({image, alt, ...props}) => {
 	const src = new URL(`../../assets/images/${image}`, import.meta.url).href;
 	return (
 		<Image
@@ -14,7 +14,7 @@ const ProductImage = ({image, alt}) => {
 			bg="blackAlpha.900"
 			borderTopLeftRadius={'3xl'}
 			borderTopRightRadius={'3xl'}
-			loading="lazy"
+			{...props}
 		/>
 	);
 };

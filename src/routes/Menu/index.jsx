@@ -42,7 +42,11 @@ const ItemPrices = ({products, toUpper = true}) => {
 								<ProductDesc desc={product.desc} />
 							</Box>
 							{product.image && (
-								<ProductImage image={product.image} alt={product.name} />
+								<ProductImage
+									image={product.image}
+									alt={product.name}
+									loading={index < 3 ? 'eager' : 'lazy'}
+								/>
 							)}
 							<PriceBox>
 								{Object.keys(product.size).map((key) => {
