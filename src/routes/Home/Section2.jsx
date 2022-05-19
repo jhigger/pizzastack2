@@ -7,8 +7,7 @@ import {
 	Image,
 	Heading,
 	Flex,
-	HStack,
-	Stack
+	HStack
 } from '@chakra-ui/react';
 import slide1 from '../../assets/images/slide1.webp';
 import slide2 from '../../assets/images/slide2.webp';
@@ -80,20 +79,16 @@ const Carousel = () => {
 
 	const slides = [
 		{
-			img: slide1
-			// label: 'First Slide',
-			// description: 'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+			img: slide1,
+			alt: 'First Slide'
 		},
 		{
-			img: slide2
-			// label: 'Second Slide',
-			// description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+			img: slide2,
+			alt: 'Second Slide'
 		},
 		{
-			img: slide3
-			// label: 'Third Slide',
-			// description:
-			// 	'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+			img: slide3,
+			alt: 'Third Slide'
 		}
 	];
 
@@ -132,25 +127,23 @@ const Carousel = () => {
 			alignItems="center"
 			justifyContent="center"
 		>
-			<Flex w="full" pos="relative" overflow="hidden">
-				<Flex h={{base: 'lg', md: '3xl'}} w="full" {...carouselStyle}>
-					{slides.map((slide, sid) => (
-						<Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
-							<Image src={slide.img} boxSize="full" backgroundSize="contain" />
-							<Stack
-								p="8px 12px"
-								pos="absolute"
-								bottom="24px"
-								textAlign="center"
-								w="full"
-								mb="8"
-								color="white"
-							>
-								{/* <Text fontSize="2xl">{slide.label}</Text>
-								<Text fontSize="lg">{slide.description}</Text> */}
-							</Stack>
-						</Box>
-					))}
+			<Flex w="full" pos="relative" overflow="hidden" borderRadius="xl">
+				<Flex w="full" {...carouselStyle}>
+					{slides.map((slide, sid) => {
+						return (
+							<Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
+								<Image
+									src={slide.img}
+									alt={slide.alt}
+									backgroundSize="contain"
+									borderRadius="xl"
+									width="full"
+									height="full"
+									loading="lazy"
+								/>
+							</Box>
+						);
+					})}
 				</Flex>
 				<Text {...arrowStyles} left="0" onClick={prevSlide}>
 					&#10094;
@@ -159,20 +152,23 @@ const Carousel = () => {
 					&#10095;
 				</Text>
 				<HStack justify="center" pos="absolute" bottom="8px" w="full">
-					{Array.from({length: slidesCount}).map((_, slide) => (
-						<Box
-							key={`dots-${slide}`}
-							cursor="pointer"
-							boxSize={['7px', , '15px']}
-							m="0 2px"
-							bg={currentSlide === slide ? 'blackAlpha.800' : 'blackAlpha.500'}
-							rounded="50%"
-							display="inline-block"
-							transition="background-color 0.6s ease"
-							_hover={{bg: 'blackAlpha.800'}}
-							onClick={() => setSlide(slide)}
-						></Box>
-					))}
+					{slides.map((_, index) => {
+						return (
+							<Box
+								key={`dots-${index}`}
+								cursor="pointer"
+								boxSize={4}
+								my="2"
+								bg={
+									currentSlide === index ? 'whiteAlpha.800' : 'whiteAlpha.500'
+								}
+								rounded="full"
+								transition="background-color 0.6s ease"
+								_hover={{bg: 'whiteAlpha.800'}}
+								onClick={() => setSlide(index)}
+							/>
+						);
+					})}
 				</HStack>
 			</Flex>
 		</Flex>

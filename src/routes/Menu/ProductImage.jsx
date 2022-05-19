@@ -14,6 +14,7 @@ const ProductImage = ({image, alt}) => {
 			bg="blackAlpha.900"
 			borderTopLeftRadius={'3xl'}
 			borderTopRightRadius={'3xl'}
+			loading="lazy"
 		/>
 	);
 };

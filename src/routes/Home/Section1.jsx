@@ -37,12 +37,11 @@ export default function Section1() {
 						</Text>
 					</Box>
 					<Image
-						loading="lazy"
-						objectFit="cover"
-						alignSelf="center"
-						justifySelf="center"
 						src={pizzastack}
 						alt="PizzaStack"
+						objectFit="cover"
+						w="full"
+						h="full"
 					/>
 				</SimpleGrid>
 			</Container>
