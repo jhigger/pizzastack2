@@ -40,6 +40,7 @@ export default function Section1() {
 						src={pizzastack}
 						alt="PizzaStack"
 						objectFit="cover"
+						loading="eager"
 						w="full"
 						h="full"
 					/>
