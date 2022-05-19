@@ -5,19 +5,16 @@ import video from '../../assets/Video720p.webm';
 
 export default function Hero() {
 	return (
-		<Flex justify="start" align="start" maxW="100vw" maxH="50vw">
+		<Flex maxW="100vw" maxH="100vw">
 			<video width="100%" height="100%" autoPlay loop muted playsInline>
 				<source src={video} type="video/webm" />
 			</video>
 			<Flex
 				position="absolute"
-				top="0"
 				w="full"
 				h="full"
-				bgGradient="linear(to-b, blackAlpha.400, blackAlpha.400, black)"
-				color="white"
+				bgGradient="linear(to-b, blackAlpha.400, blackAlpha.600, black)"
 				justify="center"
-				align="start"
 				pl={{base: '4', md: '16'}}
 				direction="column"
 			>
