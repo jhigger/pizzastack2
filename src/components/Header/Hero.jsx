@@ -6,7 +6,7 @@ import video from '../../assets/Video720p.webm';
 export default function Hero() {
 	return (
 		<Flex justify="start" align="start" maxW="100vw" maxH="50vw">
-			<video width="100%" height="100%" autoPlay loop muted playsinline>
+			<video width="100%" height="100%" autoPlay loop muted playsInline>
 				<source src={video} type="video/webm" />
 			</video>
 			<Flex
