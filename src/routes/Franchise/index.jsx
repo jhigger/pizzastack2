@@ -1,4 +1,4 @@
-import {lazy, Suspense, useEffect} from 'react';
+import {lazy, Suspense} from 'react';
 import {Box, Container, Image as Img} from '@chakra-ui/react';
 import PageTransition from '../../components/PageTransition';
 import why from '../../assets/images/why.webp';
@@ -6,12 +6,6 @@ import why from '../../assets/images/why.webp';
 const Form = lazy(() => import('./Form'));
 
 export default function Franchise() {
-	// Preload Img
-	useEffect(() => {
-		const img = new Image();
-		img.src = why;
-	}, []);
-
 	return (
 		<PageTransition>
 			<Box py={{base: 12, md: 24}} bg="black">
