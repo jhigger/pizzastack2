@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import {Container, VStack, Flex, Text, Button, Divider} from '@chakra-ui/react';
-import video from '../../assets/Video720p.webm';
+import video from '../../../assets/Video720p.webm';
 
 export default function Hero() {
 	return (
@@ -39,27 +39,23 @@ export default function Hero() {
 						</Text>
 						<Divider borderColor="white" />
 					</VStack>
-					<Link to="/franchise">
-						<Button
-							bgGradient="linear(to-b, red.200, red)"
-							mt={{base: '1', md: '3'}}
-							boxSize="min"
-							borderRightRadius="full"
-							borderBottomLeftRadius="full"
-							borderColor="white"
-							borderWidth={{base: 'thin', md: 'medium'}}
-							py="1.5"
-							_hover={{bg: 'black', textColor: 'red'}}
-						>
-							<Text
-								as="h3"
-								fontSize={{base: 'sm', md: '3xl'}}
-								casing="uppercase"
-							>
-								Franchise Now!
-							</Text>
-						</Button>
-					</Link>
+					<Button
+						as={Link}
+						to="/franchise"
+						bgGradient="linear(to-b, red.200, red)"
+						mt={{base: '1', md: '3'}}
+						boxSize="min"
+						borderRightRadius="full"
+						borderBottomLeftRadius="full"
+						borderColor="white"
+						borderWidth={{base: 'thin', md: 'medium'}}
+						py="1.5"
+						_hover={{bg: 'black', textColor: 'red'}}
+					>
+						<Text as="h3" fontSize={{base: 'sm', md: '3xl'}} casing="uppercase">
+							Franchise Now!
+						</Text>
+					</Button>
 				</Container>
 			</Flex>
 		</Flex>

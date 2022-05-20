@@ -1,6 +1,6 @@
 import {lazy, Suspense} from 'react';
 import {Switch, Route, useLocation} from 'react-router-dom';
-import Navbar from './components/Header/Navbar';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './routes/Home';
 import {AnimatePresence} from 'framer-motion';

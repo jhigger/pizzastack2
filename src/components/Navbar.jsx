@@ -14,32 +14,33 @@ import {
 } from '@chakra-ui/react';
 import {AiOutlineMenu} from 'react-icons/ai';
 import {Link} from 'react-router-dom';
-import Logo from '../../assets/images/logo.webp';
+import Logo from '../assets/images/logo.webp';
 
 const PathContext = createContext();
 
 const NavLink = ({to, text}) => {
 	const path = useContext(PathContext);
-	const bg = text.toLowerCase() == path.slice(1) ? '#28324B' : '';
+	const bg = text.toLowerCase() == path.slice(1) ? 'gray.900' : '';
 
 	return (
-		<Link to={to}>
-			<Button
-				variant="ghost"
-				_hover={{bg: 'yellow', textColor: 'black'}}
-				_active={{
-					bg: '#AAFFE5',
-					transform: 'scale(0.98)'
-				}}
-				_focus={{
-					boxShadow: '0'
-				}}
-				bg={bg}
-				color="white"
-			>
-				{text}
-			</Button>
-		</Link>
+		<Button
+			as={Link}
+			to={to}
+			variant="link"
+			p={2}
+			_hover={{bg: 'yellow.300', textColor: 'black'}}
+			_active={{
+				bg: 'red.500',
+				transform: 'scale(0.9)',
+				textColor: 'white'
+			}}
+			_focus={{
+				boxShadow: '0 0 0 1px white'
+			}}
+			bg={bg}
+		>
+			{text}
+		</Button>
 	);
 };
 
