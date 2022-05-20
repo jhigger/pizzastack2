@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from './Hero';
 import Section1 from './Section1';
 import Section2 from './Section2';
 import PageTransition from '../../components/PageTransition';
