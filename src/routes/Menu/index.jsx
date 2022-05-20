@@ -1,4 +1,4 @@
-import {Box, Flex, Container, Spacer, Image} from '@chakra-ui/react';
+import {Box, Flex, Container} from '@chakra-ui/react';
 import data from '../../assets/menu.json';
 import pattern from '../../assets/images/pattern.webp';
 import MenuRow from './MenuRow';
