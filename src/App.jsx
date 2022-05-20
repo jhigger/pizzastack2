@@ -1,7 +1,6 @@
 import {lazy, Suspense} from 'react';
 import {Switch, Route, useLocation} from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import Home from './routes/Home';
 import {AnimatePresence} from 'framer-motion';
 
@@ -10,6 +9,7 @@ const About = lazy(() => import('./routes/About'));
 const Contact = lazy(() => import('./routes/Contact'));
 const Franchise = lazy(() => import('./routes/Franchise'));
 const NotFound = lazy(() => import('./routes/NotFound'));
+const Footer = lazy(() => import('./components/Footer'));
 
 function App() {
 	let location = useLocation();
