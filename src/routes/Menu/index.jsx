@@ -53,7 +53,8 @@ const ItemPrices = ({products, toUpper = true}) => {
 									return (
 										<ProductPrice
 											key={key}
-											text={toUpper ? key.toUpperCase() : key}
+											text={key}
+											casing={toUpper && 'uppercase'}
 											dots={{base: key.length, md: key.length}}
 											price={product.size[key]}
 										/>

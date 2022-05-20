@@ -1,6 +1,6 @@
-import {chakra, useMediaQuery} from '@chakra-ui/react';
+import {Text, useMediaQuery} from '@chakra-ui/react';
 
-const ProductPrice = ({text, dots, price}) => {
+const ProductPrice = ({text, dots, price, ...props}) => {
 	const [isLargerThan800] = useMediaQuery('(min-width: 800px)');
 	const printDots = () => {
 		return '.'.repeat(
@@ -9,16 +9,17 @@ const ProductPrice = ({text, dots, price}) => {
 	};
 
 	return (
-		<chakra.p
+		<Text
 			fontSize={{base: 'md', md: 'lg'}}
 			fontWeight="semibold"
 			lineHeight="taller"
 			letterSpacing="widest"
+			{...props}
 		>
 			{text}
 			{dots && printDots()}
 			{price}
-		</chakra.p>
+		</Text>
 	);
 };
 
