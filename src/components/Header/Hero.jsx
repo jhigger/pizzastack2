@@ -1,4 +1,3 @@
-import React from 'react';
 import {Link} from 'react-router-dom';
 import {Container, VStack, Flex, Text, Button, Divider} from '@chakra-ui/react';
 import video from '../../assets/Video720p.webm';
