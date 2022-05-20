@@ -1,8 +1,9 @@
-import React from 'react';
-import Form from './Form';
+import {lazy, Suspense} from 'react';
 import {Box, Container, Image} from '@chakra-ui/react';
-import why from '../../assets/images/why.webp';
 import PageTransition from '../../components/PageTransition';
+import why from '../../assets/images/why.webp';
+
+const Form = lazy(() => import('./Form'));
 
 export default function Franchise() {
 	return (
@@ -18,14 +19,15 @@ export default function Franchise() {
 					<Image
 						loading="eager"
 						objectFit="cover"
-						alignSelf="center"
-						justifySelf="center"
 						src={why}
-						alt="why"
+						alt="Why franchise?"
 						w="full"
+						borderRadius="xl"
 					/>
 				</Container>
-				<Form />
+				<Suspense fallback={<></>}>
+					<Form />
+				</Suspense>
 			</Box>
 		</PageTransition>
 	);
