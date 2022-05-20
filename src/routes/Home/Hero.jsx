@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import {Container, VStack, Flex, Text, Button, Divider} from '@chakra-ui/react';
 import video from '../../assets/Video480p.webm';
 
-export default function Header() {
+export default function Hero() {
 	return (
 		<Flex position="relative">
 			<video width="100%" height="100%" autoPlay loop muted playsInline>
