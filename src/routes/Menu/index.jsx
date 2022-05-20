@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import {Box, Flex, Container} from '@chakra-ui/react';
 import data from '../../assets/menu.json';
 import pattern from '../../assets/images/pattern.webp';
@@ -89,6 +90,12 @@ const Specialties = ({products}) => {
 };
 
 export default function Menu() {
+	// Preload image
+	useEffect(() => {
+		const img = new Image();
+		img.src = pattern;
+	}, []);
+
 	return (
 		<PageTransition>
 			<Flex
