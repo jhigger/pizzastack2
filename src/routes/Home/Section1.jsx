@@ -1,14 +1,21 @@
+import {useEffect} from 'react';
 import {
 	Box,
 	Container,
 	Text,
 	SimpleGrid,
-	Image,
+	Image as Img,
 	Heading
 } from '@chakra-ui/react';
 import pizzastack from '../../assets/images/pizzastack.webp';
 
 export default function Section1() {
+	// Preload image
+	useEffect(() => {
+		const img = new Image();
+		img.src = pizzastack;
+	}, []);
+
 	return (
 		<Box bg="black">
 			<Container
@@ -35,7 +42,7 @@ export default function Section1() {
 							to hold a full size pizza with beverage, ALL IN ONE HAND!
 						</Text>
 					</Box>
-					<Image
+					<Img
 						src={pizzastack}
 						alt="PizzaStack"
 						objectFit="cover"
