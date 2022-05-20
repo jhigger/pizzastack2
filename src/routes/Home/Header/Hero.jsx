@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import {Container, VStack, Flex, Text, Button, Divider} from '@chakra-ui/react';
-import video from '../../../assets/Video720p.webm';
+import video from '../../../assets/Video480p.webm';
 
 export default function Hero() {
 	return (
