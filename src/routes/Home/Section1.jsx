@@ -1,4 +1,3 @@
-import {useEffect} from 'react';
 import {
 	Box,
 	Container,
@@ -10,12 +9,6 @@ import {
 import pizzastack from '../../assets/images/pizzastack.webp';
 
 export default function Section1() {
-	// Preload image
-	useEffect(() => {
-		const img = new Image();
-		img.src = pizzastack;
-	}, []);
-
 	return (
 		<Box bg="black">
 			<Container
