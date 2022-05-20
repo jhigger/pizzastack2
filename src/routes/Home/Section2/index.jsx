@@ -4,7 +4,7 @@ const Carousel = lazy(() => import('./Carousel'));
 
 export default function Section2() {
 	return (
-		<Box bg="blackAlpha.600">
+		<Box bg="black">
 			<Container
 				maxW="container.xl"
 				justify="center"
