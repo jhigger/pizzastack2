@@ -38,16 +38,11 @@ const Map = ({...props}) => {
 	return (
 		<Box my={4} {...props}>
 			<iframe
+				loading="eager"
 				width="100%"
 				height="500"
-				frameBorder="0"
-				scrolling="no"
-				marginHeight="0"
-				marginWidth="0"
 				src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Pizza%20Stack%20363%20Legarda%20Rd,%20Baguio,%20Benguet+(Pizza%20Stack)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-			>
-				<a href="https://www.gps.ie/car-satnav-gps/">sat navs</a>
-			</iframe>
+			/>
 		</Box>
 	);
 };
