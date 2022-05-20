@@ -124,14 +124,22 @@ export default function Menu() {
 							);
 						if (i == 3)
 							return (
-								<MenuRow title={'Others'} key={i} length={item.products.length}>
+								<MenuRow
+									title={item.title}
+									key={i}
+									length={item.products.length}
+								>
 									<ItemPrices products={item.products} />
 								</MenuRow>
 							);
 						if (i == 4)
 							return (
-								<MenuRow title={'Drinks'} key={i} length={item.drinks.length}>
-									<ItemPrices products={item.drinks} toUpper={false} />
+								<MenuRow
+									title={item.title}
+									key={i}
+									length={item.products.length}
+								>
+									<ItemPrices products={item.products} toUpper={false} />
 								</MenuRow>
 							);
 					})}

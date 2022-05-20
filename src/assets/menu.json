@@ -97,6 +97,7 @@
       ]
     },
     {
+      "title": "Others",
       "products": [
         {
           "name": "Cajun Fries",
@@ -128,7 +129,8 @@
       ]
     },
     {
-      "drinks": [
+      "title": "Drinks",
+      "products": [
         {
           "name": "Cucumber Lemonade",
           "size": {
