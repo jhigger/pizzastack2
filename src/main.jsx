@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {hydrate, render} from 'react-dom';
 import './index.css';
 import App from './App';
 import {ChakraProvider, extendTheme} from '@chakra-ui/react';
@@ -12,11 +11,19 @@ const config = {
 
 const theme = extendTheme({config});
 
-ReactDOM.render(
-	<ChakraProvider theme={theme}>
-		<Router>
-			<App />
-		</Router>
-	</ChakraProvider>,
-	document.getElementById('root')
-);
+const rootElement = document.getElementById('root');
+const Main = () => {
+	return (
+		<ChakraProvider theme={theme}>
+			<Router>
+				<App />
+			</Router>
+		</ChakraProvider>
+	);
+};
+
+if (rootElement.hasChildNodes()) {
+	hydrate(<Main />, rootElement);
+} else {
+	render(<Main />, rootElement);
+}
