@@ -1,5 +1,5 @@
 import {lazy, Suspense} from 'react';
-import {Switch, Route, useLocation, Redirect} from 'react-router-dom';
+import {Switch, Route, useLocation} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './routes/Home';
 import {AnimatePresence} from 'framer-motion';
