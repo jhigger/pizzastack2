@@ -84,7 +84,7 @@ export default function Navbar({path}) {
 									<Image
 										src={Logo}
 										alt="Logo"
-										boxSize={{base: '2rem', md: '6rem'}}
+										boxSize={{base: '3rem', md: '6rem'}}
 										objectFit="contain"
 									/>
 									PizzaStack™
