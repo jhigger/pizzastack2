@@ -38,10 +38,10 @@ const socials = [
 
 const Map = ({...props}) => {
 	const [loading, setLoading] = useState(true);
-	const height = 500
+	const height = 500;
 
 	return (
-		<Flex align="center" justify="center" my={4} {...props}>
+		<Flex my={4} {...props}>
 			{loading && (
 				<Center w="full" minH={height}>
 					<Spinner
