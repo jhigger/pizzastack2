@@ -1,5 +1,5 @@
 import {lazy, Suspense} from 'react';
-import {Switch, Route, useLocation} from 'react-router-dom';
+import {Switch, Route, useLocation, Redirect} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './routes/Home';
 import {AnimatePresence} from 'framer-motion';
@@ -26,7 +26,8 @@ function App() {
 						<Route exact path="/about" component={About} />
 						<Route exact path="/contact" component={Contact} />
 						<Route exact path="/franchise" component={Franchise} />
-						<Route path="*" component={NotFound} />
+						<Route exact path="/404" component={NotFound} />
+						<Redirect to="/404" />
 					</Switch>
 				</AnimatePresence>
 				<Footer />
