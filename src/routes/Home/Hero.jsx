@@ -32,8 +32,7 @@ export default function Hero() {
 							fontSize={{base: '2xl', md: '5xl'}}
 							fontWeight="medium"
 							casing="uppercase"
-							bgGradient="linear(to-b, yellow.200, yellow)"
-							bgClip="text"
+							color="yellow"
 						>
 							It's where it's at
 						</Text>
