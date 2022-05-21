@@ -11,7 +11,7 @@ export default function Franchise() {
 
 	return (
 		<PageTransition>
-			<Box py={{base: 12, md: 24}} bg="black">
+			<Box py={{base: 12, md: 24}} bg="black" minH="100vh">
 				<Container
 					maxW="container.lg"
 					justify="center"
