@@ -1,13 +1,15 @@
+import {useState} from 'react';
 import {
 	chakra,
-	Box,
 	Container,
 	Heading,
 	SimpleGrid,
 	Icon,
 	Text,
 	VStack,
-	Flex
+	Flex,
+	Spinner,
+	Center
 } from '@chakra-ui/react';
 import {FaYoutube} from '@react-icons/all-files/fa/FaYoutube';
 import {FaFacebookSquare} from '@react-icons/all-files/fa/FaFacebookSquare';
@@ -35,15 +37,36 @@ const socials = [
 ];
 
 const Map = ({...props}) => {
+	const [loading, setLoading] = useState(true);
+	const height = 500
+
 	return (
-		<Box my={4} {...props}>
+		<Flex align="center" justify="center" my={4} {...props}>
+			{loading && (
+				<Center w="full" minH={height}>
+					<Spinner
+						color="red.500"
+						emptyColor="yellow.300"
+						thickness="4px"
+						size="xl"
+						speed="1s"
+					/>
+				</Center>
+			)}
 			<iframe
+				style={{display: loading ? 'none' : 'block'}}
+				onLoad={(e) =>
+					e.target.addEventListener(
+						'load',
+						setLoading((prev) => !prev)
+					)
+				}
 				loading="eager"
 				width="100%"
-				height="500"
+				height={height}
 				src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Pizza%20Stack%20363%20Legarda%20Rd,%20Baguio,%20Benguet+(Pizza%20Stack)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
 			/>
-		</Box>
+		</Flex>
 	);
 };
 
