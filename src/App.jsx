@@ -26,8 +26,7 @@ function App() {
 						<Route exact path="/about" component={About} />
 						<Route exact path="/contact" component={Contact} />
 						<Route exact path="/franchise" component={Franchise} />
-						<Route exact path="/404" component={NotFound} />
-						<Redirect to="/404" />
+						<Route component={NotFound} />
 					</Switch>
 				</AnimatePresence>
 				<Footer />
