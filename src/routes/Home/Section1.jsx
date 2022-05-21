@@ -9,6 +9,9 @@ import {
 import pizzastack from '../../assets/images/pizzastack.webp';
 
 export default function Section1() {
+	// Preload image before render
+	new Image().src = pizzastack;
+
 	return (
 		<Box bg="black">
 			<Container

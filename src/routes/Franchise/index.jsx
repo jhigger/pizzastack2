@@ -6,6 +6,9 @@ import why from '../../assets/images/why.webp';
 const Form = lazy(() => import('./Form'));
 
 export default function Franchise() {
+	// Preload image before render
+	new Image().src = why;
+
 	return (
 		<PageTransition>
 			<Box py={{base: 12, md: 24}} bg="black">

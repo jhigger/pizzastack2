@@ -89,6 +89,9 @@ const Specialties = ({products}) => {
 };
 
 export default function Menu() {
+	// Preload image before render
+	new Image().src = pattern;
+
 	return (
 		<PageTransition>
 			<Flex
