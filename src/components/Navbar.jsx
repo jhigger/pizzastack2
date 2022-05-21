@@ -71,7 +71,6 @@ export default function Navbar({path}) {
 							justifyContent="space-between"
 							mx="auto"
 							px={{base: 1, md: 5}}
-							h={{base: '2rem', md: '100%'}}
 						>
 							<chakra.a
 								fontSize={{base: 'xs', md: 'xl'}}
