@@ -10,7 +10,7 @@ export default function Franchise() {
 		<PageTransition>
 			<Box py={{base: 12, md: 24}} bg="black">
 				<Container
-					maxW="container.xl"
+					maxW="container.lg"
 					justify="center"
 					align="center"
 					p={{base: 1, md: 12}}
@@ -22,6 +22,7 @@ export default function Franchise() {
 						src={why}
 						alt="Why franchise?"
 						w="full"
+						h="full"
 						borderRadius="xl"
 					/>
 				</Container>
