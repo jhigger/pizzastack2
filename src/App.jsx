@@ -1,8 +1,9 @@
 import {lazy, Suspense} from 'react';
-import {Switch, Route, useLocation} from 'react-router-dom';
+import {Switch, Route, useLocation, Redirect} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './routes/Home';
 import {AnimatePresence} from 'framer-motion';
+import {Helmet} from 'react-helmet';
 
 const Menu = lazy(() => import('./routes/Menu'));
 const About = lazy(() => import('./routes/About'));
@@ -11,11 +12,26 @@ const Franchise = lazy(() => import('./routes/Franchise'));
 const NotFound = lazy(() => import('./routes/NotFound'));
 const Footer = lazy(() => import('./components/Footer'));
 
+const Head = ({path}) => {
+	const pageTitle =
+		path != '/' ? ' | ' + path.charAt(1).toUpperCase() + path.slice(2) : '';
+	return (
+		<Helmet>
+			<title>{`PizzaStack${pageTitle}`}</title>
+			<meta
+				name="description"
+				content="The WORLD'S first on the go Pizza on a Cup. A revolutionary concept that makes it easy for pizza lovers to eat without tearing up a large pizza."
+			/>
+		</Helmet>
+	);
+};
+
 function App() {
 	let location = useLocation();
 
 	return (
 		<>
+			<Head path={location.pathname} />
 			<Navbar path={location.pathname} />
 			<Suspense fallback={<></>}>
 				<AnimatePresence exitBeforeEnter initial={false}>
@@ -26,7 +42,8 @@ function App() {
 						<Route exact path="/about" component={About} />
 						<Route exact path="/contact" component={Contact} />
 						<Route exact path="/franchise" component={Franchise} />
-						<Route component={NotFound} />
+						<Route path="/404" component={NotFound} />
+						<Redirect to="/404" />
 					</Switch>
 				</AnimatePresence>
 				<Footer />
