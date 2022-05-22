@@ -22,7 +22,7 @@ const Head = ({path}) => {
 		<Helmet>
 			<title>{`PizzaStack${pageTitle}`}</title>
 			<meta name="description" content={description} />
-			<link rel="image_src" href={Logo} />
+			<meta property="og:image" content={Logo} />
 		</Helmet>
 	);
 };
