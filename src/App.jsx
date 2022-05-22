@@ -29,10 +29,6 @@ const Head = ({path}) => {
 			<meta property="og:image:secure_url" itemprop="image" content={logo} />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content={window.location.href} />
-			<meta
-				name="google-site-verification"
-				content="n3HNIkgk09nyDG8V9DgTVCE2zjedYCZ9KXqQy0YUSz8"
-			/>
 		</Helmet>
 	);
 };
