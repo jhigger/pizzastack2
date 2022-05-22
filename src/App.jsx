@@ -28,7 +28,6 @@ const Head = ({path}) => {
 			<meta property="og:description" content={description} />
 			<meta property="og:image:secure_url" itemprop="image" content={logo} />
 			<meta property="og:type" content="website" />
-			<meta property="og:url" content={window.location.href} />
 		</Helmet>
 	);
 };
