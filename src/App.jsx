@@ -18,7 +18,7 @@ const Head = ({path}) => {
 		path != '/' ? ' | ' + path.charAt(1).toUpperCase() + path.slice(2) : '';
 	const description =
 		"The WORLD'S first on the go Pizza on a Cup. A revolutionary concept that makes it easy for pizza lovers to eat without tearing up a large pizza.";
-	console.log(window.location.href);
+
 	return (
 		<Helmet>
 			<title>{`PizzaStack${pageTitle}`}</title>
