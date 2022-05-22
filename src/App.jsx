@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './routes/Home';
 import {AnimatePresence} from 'framer-motion';
 import {Helmet} from 'react-helmet';
+import Logo from './assets/images/logo.webp';
 
 const Menu = lazy(() => import('./routes/Menu'));
 const About = lazy(() => import('./routes/About'));
@@ -15,13 +16,13 @@ const Footer = lazy(() => import('./components/Footer'));
 const Head = ({path}) => {
 	const pageTitle =
 		path != '/' ? ' | ' + path.charAt(1).toUpperCase() + path.slice(2) : '';
+	const description =
+		"The WORLD'S first on the go Pizza on a Cup. A revolutionary concept that makes it easy for pizza lovers to eat without tearing up a large pizza.";
 	return (
 		<Helmet>
 			<title>{`PizzaStack${pageTitle}`}</title>
-			<meta
-				name="description"
-				content="The WORLD'S first on the go Pizza on a Cup. A revolutionary concept that makes it easy for pizza lovers to eat without tearing up a large pizza."
-			/>
+			<meta name="description" content={description} />
+			<link rel="image_src" href={Logo} />
 		</Helmet>
 	);
 };
