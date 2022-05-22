@@ -1,8 +1,7 @@
 import {Image} from '@chakra-ui/react';
 
 const ProductImage = ({image, alt, ...props}) => {
-	const src = new URL(`../../assets/images/${image}`, window.location.origin)
-		.href;
+	const src = new URL(`../../assets/images/${image}`, import.meta.url).href;
 	return (
 		<Image
 			src={src}
