@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './routes/Home';
 import {AnimatePresence} from 'framer-motion';
 import {Helmet} from 'react-helmet';
-import Logo from './assets/images/logo.webp';
+import logo from './assets/images/logo.webp';
 
 const Menu = lazy(() => import('./routes/Menu'));
 const About = lazy(() => import('./routes/About'));
@@ -18,11 +18,15 @@ const Head = ({path}) => {
 		path != '/' ? ' | ' + path.charAt(1).toUpperCase() + path.slice(2) : '';
 	const description =
 		"The WORLD'S first on the go Pizza on a Cup. A revolutionary concept that makes it easy for pizza lovers to eat without tearing up a large pizza.";
+
 	return (
 		<Helmet>
 			<title>{`PizzaStack${pageTitle}`}</title>
-			<meta name="description" content={description} />
-			<meta property="og:image" content={Logo} />
+			<meta property="og:site_name" content={`PizzaStack${pageTitle}`} />
+			<meta property="og:title" content={`PizzaStack${pageTitle}`} />
+			<meta property="og:description" content={description} />
+			<meta property="og:image" itemprop="image" content={logo} />
+			<meta property="og:type" content="website" />
 		</Helmet>
 	);
 };
